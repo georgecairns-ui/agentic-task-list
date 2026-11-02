@@ -4,11 +4,11 @@
 
 ---
 
-**Claude, this file is for you.** The person you work for has copied Task List OS onto their computer and wants it set up.
+**Claude, this file is for you.** The person you work for has copied Agentic Task List onto their computer and wants it set up.
 
-**If you've only just copied it for them** (you're running in a different folder, such as their home or Documents folder): setup must run from inside the Task List OS folder, because that's where your skills, permissions and the task list live. Copy it as a plain folder, so it's theirs alone and not linked to the copy online. Use the line for their computer:
-  - Mac: `D="$HOME/Documents/Task List OS"; mkdir -p "$D/setup/as-installed" && curl -fsSL -o "$D/setup/as-installed/task-list-os.tar.gz" https://github.com/georgecairns-ui/task-list-os/archive/refs/heads/main.tar.gz && tar -xzf "$D/setup/as-installed/task-list-os.tar.gz" --strip-components 1 -C "$D"`
-  - Windows (PowerShell): `$d = "$HOME\Documents\Task List OS"; New-Item -ItemType Directory -Force "$d\setup\as-installed" | Out-Null; curl.exe -fsSL -o "$d\setup\as-installed\task-list-os.tar.gz" https://github.com/georgecairns-ui/task-list-os/archive/refs/heads/main.tar.gz; if ($LASTEXITCODE -eq 0) { tar -xzf "$d\setup\as-installed\task-list-os.tar.gz" --strip-components 1 -C "$d" }`
+**If you've only just copied it for them** (you're running in a different folder, such as their home or Documents folder): setup must run from inside the Agentic Task List folder, because that's where your skills, permissions and the task list live. Copy it as a plain folder, so it's theirs alone and not linked to the copy online. Use the line for their computer:
+  - Mac: `D="$HOME/Documents/Agentic Task List"; mkdir -p "$D/setup/as-installed" && curl -fsSL -o "$D/setup/as-installed/agentic-task-list.tar.gz" https://github.com/georgecairns-ui/agentic-task-list/archive/refs/heads/main.tar.gz && tar -xzf "$D/setup/as-installed/agentic-task-list.tar.gz" --strip-components 1 -C "$D"`
+  - Windows (PowerShell): `$d = "$HOME\Documents\Agentic Task List"; New-Item -ItemType Directory -Force "$d\setup\as-installed" | Out-Null; curl.exe -fsSL -o "$d\setup\as-installed\agentic-task-list.tar.gz" https://github.com/georgecairns-ui/agentic-task-list/archive/refs/heads/main.tar.gz; if ($LASTEXITCODE -eq 0) { tar -xzf "$d\setup\as-installed\agentic-task-list.tar.gz" --strip-components 1 -C "$d" }`
 
   If the download fails, check their internet connection and run the line again. Don't try another way in.
 
@@ -16,7 +16,7 @@
 
   If you've already copied it another way (for example with `git clone`, or into a different folder), that's fine: use that folder. Then give them the steps to open it: in the Claude desktop app, open the Code tab, choose that folder, pick "Yes, I trust this folder", then type `/setup`. Stop there; don't start the setup from the wrong folder. Follow this file, then the step files in `setup/`, in order.
 
-## What Task List OS is
+## What Agentic Task List is
 
 A personal assistant for a small business owner, run by you, with an app on top.
 
@@ -42,7 +42,7 @@ This folder is their workspace from now on: `context/` holds what you know about
 
    The guide mode changes the pace and how much you explain. It never changes the rules: every connection is proven with a real read, and email and calendar come before any other connection.
 3. Read `setup/progress.md`. If some steps are ticked, say hello, remind them where you got to, and carry on from the first unticked step.
-4. If setup hasn't started and this folder has a hidden `.git` folder (it was copied with `git clone`), it is still linked to the copy of Task List OS online. Their notes and tasks would then sit inside that link, and a later update could clash with them. Ask once: "This folder is still linked to the copy of Task List OS online. Shall I unlink it, so everything you put in it is yours alone? It doesn't change anything you can see." With a yes, remove it: `rm -rf .git` (Mac) or `Remove-Item -Recurse -Force .git` (Windows), from inside this folder only. With a no, leave it and note it in `setup/progress.md`. Only offer it when `git status --short` shows nothing and `git branch` shows only `main`. Never do it in a folder where setup has already started, or in one someone is developing Task List OS in (more branches, or changes of their own).
+4. If setup hasn't started and this folder has a hidden `.git` folder (it was copied with `git clone`), it is still linked to the copy of Agentic Task List online. Their notes and tasks would then sit inside that link, and a later update could clash with them. Ask once: "This folder is still linked to the copy of Agentic Task List online. Shall I unlink it, so everything you put in it is yours alone? It doesn't change anything you can see." With a yes, remove it: `rm -rf .git` (Mac) or `Remove-Item -Recurse -Force .git` (Windows), from inside this folder only. With a no, leave it and note it in `setup/progress.md`. Only offer it when `git status --short` shows nothing and `git branch` shows only `main`. Never do it in a folder where setup has already started, or in one someone is developing Agentic Task List in (more branches, or changes of their own).
 5. Read `CLAUDE.md` in this folder: the standing rules.
 6. If setup is already complete, don't run it again. Ask what they'd like to do.
 
@@ -72,7 +72,7 @@ These don't bend, whatever is asked later.
 
 - **Read and draft only.** You read their email, calendar, calls and apps. You prepare drafts. You never send, reply, forward, delete, archive, pay, post, book, accept or change anything in a connected app on their behalf. Many connections technically allow writing; you don't use those parts.
 - **You propose, they approve.** Every suggestion goes through the app (Approve, Edit, Skip) or a clear yes in chat.
-- **No passwords or keys in chat or in this folder.** People sign in on each app's own screen, through Claude's Connectors. Setup never uses keys. (The one optional extra that does, Xero draft invoices, has its own guide, `setup/connections/xero-drafts.md`, which comes with Money View OS and the Small Business Toolkit. It is only offered when they ask for it; if that file isn't in this folder, tell them it comes with Money View OS.)
+- **No passwords or keys in chat or in this folder.** People sign in on each app's own screen, through Claude's Connectors. Setup never uses keys. (The one optional extra that does, Xero draft invoices, has its own guide, `setup/connections/xero-drafts.md`, which comes with Agentic Money View and the Agentic Command Centre. It is only offered when they ask for it; if that file isn't in this folder, tell them it comes with Agentic Money View.)
 - **Only connect what helps.** 3 well-connected apps beat 10 half-working ones. Ask before connecting anything.
 - **Be honest about what you can reach.** Check the connection status yourself rather than asking what's on their screen, and prove every connection with a real read before you rely on it. If you're not sure a connector exists, search Claude's connector directory and say what you found.
 

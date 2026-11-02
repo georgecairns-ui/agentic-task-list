@@ -1,10 +1,10 @@
-# Task List OS: what goes into CLAUDE.md when it's attached
+# Agentic Task List: what goes into CLAUDE.md when it's attached
 
-When Task List OS is attached to a folder that started with another tool, Claude copies everything below the line into the main `CLAUDE.md`, under "Attached tools". In Task List OS's own download these instructions are already in `CLAUDE.md`, so nothing is copied.
+When Agentic Task List is attached to a folder that started with another tool, Claude copies everything below the line into the main `CLAUDE.md`, under "Attached tools". In Agentic Task List's own download these instructions are already in `CLAUDE.md`, so nothing is copied.
 
 ---
 
-### Task List OS
+### Agentic Task List
 
 The task list app, where every tool's actions land. Their tasks are in `apps/task-list/data/tasks.json`; `apps/task-list/CLAUDE.md` explains the format. Open it at http://localhost:4747/task-list/.
 

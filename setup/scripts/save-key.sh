@@ -27,7 +27,7 @@ FOLDER_NAME="$(name_in "$HERE/toolkit.json")"
 [ -n "$FOLDER_NAME" ] || FOLDER_NAME="toolkit"
 
 # Where saved keys live. These names are kept as they are, because keys saved before now are found there.
-SERVICE="task-list-os"
+SERVICE="agentic-task-list"
 
 NAME="${1:-}"
 if [[ ! "$NAME" =~ ^[A-Z][A-Z0-9_]*$ ]]; then

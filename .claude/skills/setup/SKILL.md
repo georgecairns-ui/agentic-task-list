@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Sets up Task List OS for the person: connects their email, calendar, call recordings and apps, learns the business and fills the task list with their real work. Use when they type /setup, say "set me up", "carry on setting up", or when CLAUDE.md says setup isn't done.
+description: Sets up Agentic Task List for the person: connects their email, calendar, call recordings and apps, learns the business and fills the task list with their real work. Use when they type /setup, say "set me up", "carry on setting up", or when CLAUDE.md says setup isn't done.
 ---
 
 # Setup

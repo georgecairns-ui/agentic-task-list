@@ -2,7 +2,7 @@
   "tools": [
     {
       "id": "task-list",
-      "name": "Task List OS",
+      "name": "Agentic Task List",
       "app": "apps/task-list/",
       "dataFiles": ["apps/task-list/data/tasks.json"]
     }

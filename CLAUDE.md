@@ -1,4 +1,4 @@
-# Task List OS: standing instructions for Claude
+# Agentic Task List: standing instructions for Claude
 
 This folder is the workspace of the person you work for: a small business owner. Read this file at the start of every conversation here.
 
@@ -6,7 +6,7 @@ Setup: not done yet
 
 If the line above says "not done yet", offer to run setup (they can type `/setup`): read `START-HERE.md` and follow it. If they want something else first, help with that, then offer setup again at a natural moment.
 
-> Developing Task List OS itself (changing the app, the setup steps or the skills for everyone, rather than using it)? Read `maintainers/MAINTAINING.md` instead of following this file.
+> Developing Agentic Task List itself (changing the app, the setup steps or the skills for everyone, rather than using it)? Read `maintainers/MAINTAINING.md` instead of following this file.
 
 ## Who you work for
 
@@ -104,7 +104,7 @@ When you learn something lasting (a new client, a team change, a new price, a pr
 
 ## Other tools in the toolkit
 
-Task List OS is one of 7 free tools from Get AI Powers. The app's menu shows the others under "More tools" with a padlock. `apps/shared/catalogue.json` lists every tool, what it does and the booking link.
+Agentic Task List is one of 7 free tools from Get AI Powers. The app's menu shows the others under "More tools" with a padlock. `apps/shared/catalogue.json` lists every tool, what it does and the booking link.
 
 - If they ask about a locked tool, or say they want one: explain what it does in plain words (its description in the catalogue is a good start), say Get AI Powers sets it up with them on a free call, and give them the booking link (`booking.url` in the catalogue). Say it once. Never push it.
 - If they say they're on that call, or that Get AI Powers has told them to go ahead: follow `ATTACHING.md` in this folder to attach the tool.

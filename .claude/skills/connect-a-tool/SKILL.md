@@ -59,4 +59,4 @@ Outside the email and calendar step of setup (email and calendar, which don't mo
 - Never ask the person to paste a password, key or token into the chat, or anywhere in this folder.
 - Never add a connector address that isn't in our guide, and never set up a server outside Claude's Connectors screen.
 - Default access is read and draft only. Anything that sends, pays, deletes or posts needs the person's say-so each time, even once connected.
-- Xero draft invoices (`setup/connections/xero-drafts.md`) is an optional extra that comes with Money View OS and the Small Business Toolkit: only when the person asks for Claude to put invoices into Xero. Never offer it in setup. If that file isn't in this folder, tell them it comes with Money View OS.
+- Xero draft invoices (`setup/connections/xero-drafts.md`) is an optional extra that comes with Agentic Money View and the Agentic Command Centre: only when the person asks for Claude to put invoices into Xero. Never offer it in setup. If that file isn't in this folder, tell them it comes with Agentic Money View.

@@ -5,7 +5,7 @@ description: Gets the person's app running on their computer and gives them the 
 
 # Open the app
 
-The app runs from a small helper on the person's computer (`apps/server/`), so it opens like a normal web page at **http://localhost:4747**: no folder to pick, nothing to allow. The helper only listens on this computer, only serves the app, and only ever saves the data files of the tools listed in `apps/installed.json`. Its name in messages, its log file and its start-up setting come from the folder's own name (`name` in `toolkit.json`, for example "Ads OS"); say that name to the person, never another tool's.
+The app runs from a small helper on the person's computer (`apps/server/`), so it opens like a normal web page at **http://localhost:4747**: no folder to pick, nothing to allow. The helper only listens on this computer, only serves the app, and only ever saves the data files of the tools listed in `apps/installed.json`. Its name in messages, its log file and its start-up setting come from the folder's own name (`name` in `toolkit.json`, for example "Agentic Ads"); say that name to the person, never another tool's.
 
 ## Steps
 
@@ -28,7 +28,7 @@ The app runs from a small helper on the person's computer (`apps/server/`), so i
 - **"Port already in use"**: something else is using 4747. Check whether it's the app already (`curl -s http://127.0.0.1:4747/api/alive.js` returns `window.tlosAlive = true;`). If it's something else, start the helper on another port with `TLOS_PORT=4848` (and use that port in the link and the autostart).
 - **The page says the helper stopped running**: run step 1 again; the page reconnects by itself.
 - **The page is empty or says the file has a mistake**: check the tool's data file in `apps/<tool>/data/` is valid (see that tool's own `CLAUDE.md`).
-- Logs: `~/Library/Logs/<name>.log` on a Mac, where `<name>` is the folder's name in lower case with hyphens (for example `ads-os.log`).
+- Logs: `~/Library/Logs/<name>.log` on a Mac, where `<name>` is the folder's name in lower case with hyphens (for example `agentic-ads.log`).
 
 ## Rules
 

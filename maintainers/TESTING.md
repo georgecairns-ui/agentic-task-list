@@ -1,4 +1,4 @@
-# Testing Task List OS
+# Testing Agentic Task List
 
 How to test the whole thing as a customer would, without touching the repo.
 
@@ -10,7 +10,7 @@ Never test inside the repo: setup writes your real details into it. Build the re
 bash maintainers/make-release.sh
 ```
 
-Then unzip `dist/task-list-os.zip` into a test location, for example `Documents/Task List OS test`. Each test run starts from a fresh unzip.
+Then unzip `dist/agentic-task-list.zip` into a test location, for example `Documents/Agentic Task List test`. Each test run starts from a fresh unzip.
 
 ## 2. Run setup as a customer
 
@@ -66,7 +66,7 @@ Then unzip `dist/task-list-os.zip` into a test location, for example `Documents/
 **The redesign** (shared version 3)
 - [ ] http://localhost:4747 opens Home: a greeting and 7 boxes in rows that line up. Approve on Today's plan works there.
 - [ ] Customise on Home: hide, show, move, make wide, Done. Reload: still the same. Reset puts the default back.
-- [ ] Sidebar: Home at the top, Task List OS as a dropdown with its pages (All tasks has Waiting on and Done under it). Fold it: the total waiting shows on its name. Reload: still folded.
+- [ ] Sidebar: Home at the top, Agentic Task List as a dropdown with its pages (All tasks has Waiting on and Done under it). Fold it: the total waiting shows on its name. Reload: still folded.
 - [ ] The moon or sun button switches light and dark on every page, and is remembered.
 - [ ] Tasks: Today, This week and All each work as Board, List and Calendar. Drag a card between To do, In progress, Waiting on and Done; it stays there after a reload. Every card is the same height and stays inside its column, with the title on up to 2 lines.
 - [ ] Today shows Claude's plan on top. Old links (#today, #week, #calendar, #all, #waiting, #done) open the matching Tasks view.
@@ -79,8 +79,8 @@ Then unzip `dist/task-list-os.zip` into a test location, for example `Documents/
 - [ ] Setup step 5 offers to match the brand from a website or brand guidelines, and the colour, font and logo change in light and dark.
 
 **Toolkit menu and attaching** (shared version 2)
-- [ ] The sidebar shows "Your tools" with Task List OS, and "More tools" with the other 7, each with a padlock, in the catalogue's order.
-- [ ] Clicking a locked tool opens the panel. "Book a free call" opens the booking page in a new tab, and its address ends with `utm_source=task-list-os&utm_medium=toolkit-app&utm_campaign=<that tool>`. Escape, "Not now" and a click outside all close it.
+- [ ] The sidebar shows "Your tools" with Agentic Task List, and "More tools" with the other 7, each with a padlock, in the catalogue's order.
+- [ ] Clicking a locked tool opens the panel. "Book a free call" opens the booking page in a new tab, and its address ends with `utm_source=agentic-task-list&utm_medium=toolkit-app&utm_campaign=<that tool>`. Escape, "Not now" and a click outside all close it.
 - [ ] With `showMoreTools` set to `false` in `apps/shared/catalogue.json`, the locked tools disappear.
 - [ ] The full list of helper checks, including a throwaway test tool, is in `maintainers/SHARED-V2-CHANGES.md` section 5. Never ship the test tool.
 

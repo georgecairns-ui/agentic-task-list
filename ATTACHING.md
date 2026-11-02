@@ -4,7 +4,7 @@ Version 4, 27 October 2026. This file is identical in every tool in the small bu
 
 ## The idea
 
-Every tool is a complete kit on its own, built exactly the way Task List OS is built. Someone can use just the task list, or just the pipeline, and it works. Attach a second tool and it slots into the same folder: one app at http://localhost:4747 with both tools in the sidebar, one set of business notes, one files folder, and one Claude that knows how to run both. Attach all 7 and they've got the whole toolkit.
+Every tool is a complete kit on its own, built exactly the way Agentic Task List is built. Someone can use just the task list, or just the pipeline, and it works. Attach a second tool and it slots into the same folder: one app at http://localhost:4747 with both tools in the sidebar, one set of business notes, one files folder, and one Claude that knows how to run both. Attach all 7 and they've got the whole toolkit.
 
 There is no separate "whole toolkit" product. The whole toolkit is simply every tool attached to every other tool.
 
@@ -26,17 +26,17 @@ Every tool is free. Each one is a way into a conversation with Get AI Powers. So
 
 | Folder | Tool | App folder | What it does |
 |---|---|---|---|
-| `task-list-os` | Task List OS | `apps/task-list/` | The task list that does itself. Where every tool's actions land |
-| `pipeline-os` | Pipeline OS | `apps/pipeline/` | The pipeline that chases itself: every deal on one board, follow-ups drafted for you |
-| `skill-and-folder-map-os` | Skill and Folder Map OS | `apps/skill-map/` | See everything Claude could take off your plate, mapped across the business |
-| `proposal-writing-os` | Proposal Writing OS | `apps/proposals/` | Put everything about a client in one folder, get a proposal in your brand |
-| `content-machine-os` | Content Machine OS | `apps/content/` | A week of posts planned and drafted in your voice |
-| `money-view-os` | Money View OS | `apps/money/` | Your money month by month from your accounts app, with a 12-week forecast and the tax to put aside |
-| `ads-os` | Ads OS | `apps/ads/` | Google and Meta ads on one plain-English screen, with campaigns Claude builds and runs once you say yes |
+| `agentic-task-list` | Agentic Task List | `apps/task-list/` | The task list that does itself. Where every tool's actions land |
+| `agentic-pipeline` | Agentic Pipeline | `apps/pipeline/` | The pipeline that chases itself: every deal on one board, follow-ups drafted for you |
+| `agentic-skill-and-folder-map` | Agentic Skill and Folder Map | `apps/skill-map/` | See everything Claude could take off your plate, mapped across the business |
+| `agentic-proposals` | Agentic Proposals | `apps/proposals/` | Put everything about a client in one folder, get a proposal in your brand |
+| `agentic-content-machine` | Agentic Content Machine | `apps/content/` | A week of posts planned and drafted in your voice |
+| `agentic-money-view` | Agentic Money View | `apps/money/` | Your money month by month from your accounts app, with a 12-week forecast and the tax to put aside |
+| `agentic-ads` | Agentic Ads | `apps/ads/` | Google and Meta ads on one plain-English screen, with campaigns Claude builds and runs once you say yes |
 
 ## Same shape in every tool
 
-Every tool copies Task List OS's layout. Shared parts are identical in every tool; tool parts belong to that tool alone.
+Every tool copies Agentic Task List's layout. Shared parts are identical in every tool; tool parts belong to that tool alone.
 
 ```
 CLAUDE.md, START-HERE.md, README.md, LICENSE   kit files (same structure, the tool's own words)
@@ -62,7 +62,7 @@ Every tool has one at its root:
 ```json
 {
   "id": "pipeline",
-  "name": "Pipeline OS",
+  "name": "Agentic Pipeline",
   "version": "1.0.0",
   "sharedVersion": "2",
   "attachingVersion": "1",
@@ -77,7 +77,7 @@ Every tool has one at its root:
 }
 ```
 
-A tool that keeps photos or videos (Content Machine OS) adds `"media": true`. Step 5 below copies it into `apps/installed.json`, and the helper only stores and plays back files for a tool that has it (shared version 7).
+A tool that keeps photos or videos (Agentic Content Machine) adds `"media": true`. Step 5 below copies it into `apps/installed.json`, and the helper only stores and plays back files for a tool that has it (shared version 7).
 
 ## Attaching: what Claude does
 
@@ -91,7 +91,7 @@ Usually on a call with Get AI Powers (see the menu section above). When the pers
 6. Adds the tool's `ATTACH-CLAUDE.md` lines (its skills table and day-to-day rules) to the main `CLAUDE.md` under "Attached tools".
 7. Adds the tool's own permissions to the folder's `.claude/settings.json`, so Claude doesn't ask every time it uses the new tool. It reads the incoming tool's `permissions.allow` list and adds an entry only when all of these are true:
    - The folder's list doesn't already have it, letter for letter.
-   - It belongs to the incoming tool: an `Edit(...)` or `Write(...)` inside `./apps/<tool>/` or on the skill folders the tool makes for itself (Content Machine OS's `./.claude/skills/*-what-works/**`), or a `Bash(...)` that runs a script in `apps/<tool>/` or a setup script the tool brings with it (`setup/scripts/`), or `WebSearch` or `WebFetch`. The entries every tool shares (`Read(./**)`, `context/`, `files/`, `apps/home/data/`, `skills-to-upload/`, `setup/progress.md`, the helper's start script) are already in the folder and are left alone.
+   - It belongs to the incoming tool: an `Edit(...)` or `Write(...)` inside `./apps/<tool>/` or on the skill folders the tool makes for itself (Agentic Content Machine's `./.claude/skills/*-what-works/**`), or a `Bash(...)` that runs a script in `apps/<tool>/` or a setup script the tool brings with it (`setup/scripts/`), or `WebSearch` or `WebFetch`. The entries every tool shares (`Read(./**)`, `context/`, `files/`, `apps/home/data/`, `skills-to-upload/`, `setup/progress.md`, the helper's start script) are already in the folder and are left alone.
    - It doesn't send, post, publish, upload or delete anything: no email, message or ad platform tool, no `git push`, `curl`, `rm` or the like, and no open-ended command such as `Bash(ls:*)`.
 
    It never removes or changes an entry already there, never touches `deny`, `ask` or any other setting, and never touches `.claude/settings.local.json` (the person's own). It tells the person in plain words what it added, and anything it left out so Claude will ask first. A new entry takes effect when Claude is next started in the folder.
@@ -103,9 +103,9 @@ Detaching works the other way round. The tool's data moves to `files/99-archive/
 
 ## Passing things between tools
 
-- **Action lands in the task list.** Anything a tool turns up that the person has to do becomes a suggested task in Task List OS (its Review page, "New" tag), in the task list's own format (`apps/task-list/CLAUDE.md`), with a link back to where it came from: `"source": { "tool": "pipeline", "id": "d-x7k2m9" }`. If Task List OS isn't attached, the tool keeps it in its own list instead.
+- **Action lands in the task list.** Anything a tool turns up that the person has to do becomes a suggested task in Agentic Task List (its Review page, "New" tag), in the task list's own format (`apps/task-list/CLAUDE.md`), with a link back to where it came from: `"source": { "tool": "pipeline", "id": "d-x7k2m9" }`. If Agentic Task List isn't attached, the tool keeps it in its own list instead.
 - **Reading is fine, writing is not.** An attached tool may read another tool's data file (the proposal writer reads the pipeline's deals). It never edits another tool's records. If it wants something changed elsewhere (move a deal to "Proposal sent"), it adds a suggestion to that tool's suggestions list and the person approves it there.
-- **One list of people.** Task List OS already keeps People. Tools link to a person by their People id when Task List OS is attached, rather than keeping a second copy of contacts.
+- **One list of people.** Agentic Task List already keeps People. Tools link to a person by their People id when Agentic Task List is attached, rather than keeping a second copy of contacts.
 - **One set of notes, one files folder.** Every tool reads `context/` and files into `files/`. A tool only adds its own notes as a new section or a new file in `context/`.
 - **Every handoff needs a click.** Nothing moves between tools on its own.
 - **Every tool still works alone.** If the tool it would read or send to isn't attached, it does the job itself or skips that part quietly. No errors, no nagging.
@@ -114,22 +114,22 @@ Detaching works the other way round. The tool's data moves to `files/99-archive/
 
 | Tool | Reads, when attached | Sends, when attached |
 |---|---|---|
-| Task List OS | | Receives tasks from every tool |
-| Pipeline OS | People and tasks (Task List OS), proposal status | Tasks: chases due. Proposal writer: "proposal needed" when a deal reaches that stage. Money view: expected income when a deal is won. Content machine: a case study idea when a deal is won |
-| Skill and Folder Map OS | `context/`, which tools are installed (to show what's already covered) | Tasks: build the start-here skills |
-| Proposal Writing OS | Pipeline deals | Tasks: follow up a sent proposal. Pipeline: move the deal's stage when a proposal is sent, won or lost. Money view: expected income when won |
-| Content Machine OS | Pipeline wins, `context/voice.md` | Tasks: posts due today |
-| Money View OS | Pipeline and proposal wins, ad spend | Tasks: chase overdue invoices (using the `polite-chaser` skill) |
-| Ads OS | Pipeline (deals won from ads) | Tasks: approved ad changes, and campaigns waiting to be switched on. Pipeline: new Meta leads as suggested deals. Money view reads ad spend itself, as money going out |
+| Agentic Task List | | Receives tasks from every tool |
+| Agentic Pipeline | People and tasks (Agentic Task List), proposal status | Tasks: chases due. Proposal writer: "proposal needed" when a deal reaches that stage. Money view: expected income when a deal is won. Content machine: a case study idea when a deal is won |
+| Agentic Skill and Folder Map | `context/`, which tools are installed (to show what's already covered) | Tasks: build the start-here skills |
+| Agentic Proposals | Pipeline deals | Tasks: follow up a sent proposal. Pipeline: move the deal's stage when a proposal is sent, won or lost. Money view: expected income when won |
+| Agentic Content Machine | Pipeline wins, `context/voice.md` | Tasks: posts due today |
+| Agentic Money View | Pipeline and proposal wins, ad spend | Tasks: chase overdue invoices (using the `polite-chaser` skill) |
+| Agentic Ads | Pipeline (deals won from ads) | Tasks: approved ad changes, and campaigns waiting to be switched on. Pipeline: new Meta leads as suggested deals. Money view reads ad spend itself, as money going out |
 
 ## The helper and the sidebar
 
-- The helper in `apps/server/` serves `apps/` and saves only the data files of tools listed in `apps/installed.json`, with the same backup and safe-save rules Task List OS uses. It still refuses everything else.
+- The helper in `apps/server/` serves `apps/` and saves only the data files of tools listed in `apps/installed.json`, with the same backup and safe-save rules Agentic Task List uses. It still refuses everything else.
 - The shared sidebar reads `apps/installed.json` and shows every attached tool, so attached tools feel like one app. Moving between tools keeps the same look and the same place in the sidebar.
 
 ## Repositories and copies
 
-- **Where the work happens:** each tool is a git repository on George's computer at `~/Repos/getaipowers/<folder>`, next to `task-list-os`.
+- **Where the work happens:** each tool is a git repository on George's computer at `~/Repos/getaipowers/<folder>`, next to `agentic-task-list`.
 - **Public download:** each repository is published on GitHub at `github.com/georgecairns-ui/<folder>`. That's what customers copy.
 - **Google Drive copy:** a plain copy of the published version (no git history) sits in the small business toolkit folder in the Get AI Powers Brain shared drive, one folder per tool. Joey and anyone else on the team install from there. It's refreshed every time a new version is published. Never edit it there: changes made in Drive are overwritten.
-- **Licence:** every tool carries the same plain-English licence as Task List OS: free to use and change for your own business, not for resale.
+- **Licence:** every tool carries the same plain-English licence as Agentic Task List: free to use and change for your own business, not for resale.

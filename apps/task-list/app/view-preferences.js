@@ -1,5 +1,5 @@
 /*
-  PREFERENCES: everything the person can change about how Task List OS works for them
+  PREFERENCES: everything the person can change about how Agentic Task List works for them
   -----------------------------------------------------------------------------------
   You and your business, your working day, how the Tasks page opens, the names of the board's
   columns, the categories (rename, recolour, add, remove), where drafts and calendar events
@@ -125,7 +125,7 @@
   window.TL.views = window.TL.views || {};
   window.TL.views.preferences = {
     title: function () { return "Preferences"; },
-    sub: function () { return "How Task List OS works for you"; },
+    sub: function () { return "How Agentic Task List works for you"; },
     render: render,
     bind: function (root) {
       root.querySelectorAll('[data-pref="cat-colour"]').forEach(function (el) { el.addEventListener("input", function () { el.dataset.touched = "1"; }); });
