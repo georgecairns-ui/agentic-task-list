@@ -2,7 +2,7 @@
 /*
   THE HELPER: the little helper that runs this folder's tools on this computer
   ----------------------------------------------------------------------------
-  It calls itself by the folder's name: "name" in toolkit.json (for example "Ads OS").
+  It calls itself by the folder's name: "name" in toolkit.json (for example "Agentic Ads").
   Claude starts this during setup. It does 2 things:
     1. Serves the app at http://localhost:4747 so it opens like any web page.
     2. Lets the app read and save your data files (for example apps/task-list/data/tasks.json), so there's

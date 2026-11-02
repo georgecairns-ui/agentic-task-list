@@ -31,7 +31,7 @@
   // ---------- Tiny wrapper around the browser's built-in IndexedDB, used only to remember the folder ----------
   function idb() {
     return new Promise(function (resolve, reject) {
-      const req = indexedDB.open("task-list-os", 1);
+      const req = indexedDB.open("agentic-task-list", 1);
       req.onupgradeneeded = function () { req.result.createObjectStore("folders"); };
       req.onsuccess = function () { resolve(req.result); };
       req.onerror = function () { reject(req.error); };
@@ -185,7 +185,7 @@
       if (!r.ok) throw StoreError("save-failed", "Your change could not be saved.");
       return (await r.json()).modified;
     }
-    // The folder's name, from the helper (toolkit.json's "name", for example "Ads OS")
+    // The folder's name, from the helper (toolkit.json's "name", for example "Agentic Ads")
     async function helperName() {
       try { const r = await fetch("/api/info", { cache: "no-store" }); return r.ok ? (await r.json()).name : undefined; } catch (e) { return undefined; }   // only a label: reading the data reports a stopped helper
     }
@@ -280,7 +280,7 @@
     async function connect() {
       let folder;
       try {
-        folder = await window.showDirectoryPicker({ id: "task-list-os-" + opts.moduleId, mode: "readwrite" });
+        folder = await window.showDirectoryPicker({ id: "agentic-task-list-" + opts.moduleId, mode: "readwrite" });
       } catch (e) {
         if (e && e.name === "AbortError") return false; // they closed the picker, no harm done
         throw e;

@@ -1,5 +1,5 @@
 /*
-  TASK LIST OS ON HOME: the boxes this tool adds to the Home dashboard
+  AGENTIC TASK LIST ON HOME: the boxes this tool adds to the Home dashboard
   -------------------------------------------------------------------
   Loaded by apps/home/home.js after app/model.js (see "home" in menu.json).
   It reads and saves the same task file as the task list itself, through the same shared store,
@@ -14,7 +14,7 @@
   let data = null;
   let ctx = null;
   let store = null;
-  let folder = null;   // this Task List OS folder, so "Open in Claude" starts Claude Code right here
+  let folder = null;   // this Agentic Task List folder, so "Open in Claude" starts Claude Code right here
 
   // Same rule as the task panel: Claude Code in this folder when it's known, otherwise a new chat. Never sent by itself.
   function claudeLink(prompt) {
@@ -38,7 +38,7 @@
     const list = M.tasksForDate(data, today(), { includeDone: true })
       .concat(M.approvedToday(data).map(function (i) { return M.taskById(data, i.taskId); }))
       .filter(function (t, i, all) { return t && all.indexOf(t) === i; });
-    if (M.notSetUp(data)) return '<div class="hbox__setup"><p><strong>Let\u2019s set up your task list.</strong> In the Claude desktop app, open the Code tab in your Task List OS folder and type <code>/setup</code>. Claude connects your email, calendar and calls, then fills this page with your real work.</p></div>';
+    if (M.notSetUp(data)) return '<div class="hbox__setup"><p><strong>Let\u2019s set up your task list.</strong> In the Claude desktop app, open the Code tab in your Agentic Task List folder and type <code>/setup</code>. Claude connects your email, calendar and calls, then fills this page with your real work.</p></div>';
     if (!props.length && !list.length) return empty("Claude hasn't sorted today yet. Say \"sort my day\" to Claude and the plan appears here.");
     const note = M.planIsToday(data) && data.plan.note ? '<p class="hplan__note">' + esc(data.plan.note) + "</p>" : "";
     const rows = props.slice(0, 4).map(function (i) {

@@ -9,7 +9,7 @@
   - Every note goes into one file, apps/home/data/braindump.json (saved by the helper; never shipped).
   - The helper starts Claude with the shared skill .claude/skills/sort-brain-dump.
   - "What's it about?" shows "Let Claude decide", every tool in this folder, and anything the page's
-    own tool adds with register() (Pipeline OS adds "A deal..." and "A person...").
+    own tool adds with register() (Agentic Pipeline adds "A deal..." and "A person...").
   - Any button with data-brain-dump opens it. V opens it too, unless someone is typing.
 
   A tool adds its own choices:

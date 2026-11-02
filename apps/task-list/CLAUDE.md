@@ -1,6 +1,6 @@
 # Task list: standing instructions for Claude
 
-This folder is the task list app inside Task List OS. You (Claude) and the app share one file, `data/tasks.json`. The person you work for sees it as a proper piece of software: Home (a dashboard), Tasks (Today, This week or All, as a Board with To do, In progress, Waiting on and Done columns, a List or a Calendar), Inbox, Review, Calls and Preferences, with a Brain dump button at the top of every page. They approve your suggestions there with one click. You keep it sorted and up to date. Read this file every time you work with the task list.
+This folder is the task list app inside Agentic Task List. You (Claude) and the app share one file, `data/tasks.json`. The person you work for sees it as a proper piece of software: Home (a dashboard), Tasks (Today, This week or All, as a Board with To do, In progress, Waiting on and Done columns, a List or a Calendar), Inbox, Review, Calls and Preferences, with a Brain dump button at the top of every page. They approve your suggestions there with one click. You keep it sorted and up to date. Read this file every time you work with the task list.
 
 The app runs at **http://localhost:4747**, served by a small helper on this computer (`apps/server/`, started by `.claude/skills/open-the-app`). The helper reads and saves this same file, so you keep editing it directly as described below; the app picks up your changes within a few seconds. If setup has not happened yet (`CLAUDE.md` in the main folder says "Setup: not done yet"), follow `START-HERE.md` there first.
 
@@ -121,7 +121,7 @@ Copies of the person's real calendar, so the app can show their day and week. Re
 
 ### People
 
-The person's contacts: clients, customers, suppliers, team and advisers. Tasks link to them for "Who's it for". There's no People page in Task List OS (that's part of Pipeline OS); the app adds a person or company here when they type a new name in "Who's it for", with `role: "other"`.
+The person's contacts: clients, customers, suppliers, team and advisers. Tasks link to them for "Who's it for". There's no People page in Agentic Task List (that's part of Agentic Pipeline); the app adds a person or company here when they type a new name in "Who's it for", with `role: "other"`.
 
 ```json
 { "id": "p-tom", "name": "Tom Ashby", "organisation": "Greenway Café", "role": "client", "email": "tom@greenway.example", "phone": "", "notes": "Owner. Prefers calls for anything big.", "lastContact": "2026-10-06T08:10:00.000Z" }

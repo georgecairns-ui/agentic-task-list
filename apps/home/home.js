@@ -226,7 +226,7 @@
             }).catch(function () { /* a tool without Home boxes, or one that failed to load: skip it quietly */ });
           });
         }, Promise.resolve()).then(function () {
-          // The shared Connections box (shared v13). The Small Business Toolkit shows its own, from the same file.
+          // The shared Connections box (shared v13). The Agentic Command Centre shows its own, from the same file.
           if (inFolder.some(function (t) { return t.id === "toolkit"; })) return;
           return loadScript("../shared/js/connections.js").then(function () { return loadScript("../shared/js/connections-box.js"); })
             .catch(function () { /* no Connections box: Home still works */ });

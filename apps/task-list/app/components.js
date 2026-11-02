@@ -50,7 +50,7 @@
 
   // ---------- Opening a task in Claude ----------
   // Opens the Claude desktop app with the prompt typed in, ready for the person to read and send.
-  // With the folder known it opens a Claude Code session in their Task List OS folder (their
+  // With the folder known it opens a Claude Code session in their Agentic Task List folder (their
   // connections, skills and notes); otherwise a new chat. Claude never sends it by itself.
   let kitFolder = null;
   function setFolder(f) { kitFolder = f || null; }
@@ -186,7 +186,7 @@
       '<div class="setup-card__body"><h2>Let\u2019s set up your task list</h2>' +
       '<p class="muted">It\u2019s empty for now. Claude fills it with your real work in 30 to 40 minutes, and you approve everything.</p>' +
       '<ol class="setup-card__steps">' +
-      "<li>Open Claude Code in your <strong>Task List OS</strong> folder (in the Claude desktop app, the Code tab).</li>" +
+      "<li>Open Claude Code in your <strong>Agentic Task List</strong> folder (in the Claude desktop app, the Code tab).</li>" +
       "<li>Type " + say("/setup") + " and answer Claude\u2019s questions. It connects your email, calendar and calls first.</li>" +
       "<li>Your tasks, replies and today\u2019s plan appear here. Then press <strong>Brain dump</strong> any time your head\u2019s full.</li>" +
       "</ol></div></section>";

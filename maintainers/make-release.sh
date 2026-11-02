@@ -2,9 +2,9 @@
 #
 # MAKE RELEASE
 # ------------
-# Builds dist/task-list-os.zip: a clean copy of the kit for customers to download.
+# Builds dist/agentic-task-list.zip: a clean copy of the kit for customers to download.
 #
-# Run it from the task-list-os folder with:   bash maintainers/make-release.sh
+# Run it from the agentic-task-list folder with:   bash maintainers/make-release.sh
 # After changing the kit's own colours or fonts on purpose: bash maintainers/make-release.sh --record-look
 #
 # What it does:
@@ -12,18 +12,18 @@
 #      business notes, setup progress, documents, own skills, logo, fonts or colours
 #      can go out by mistake. Stops if not.
 #      That includes anything in setup/as-installed/ except its README (a customer's saved download).
-#   2. Copies the kit into a temporary folder called "Task List OS", leaving out this
+#   2. Copies the kit into a temporary folder called "Agentic Task List", leaving out this
 #      maintainers folder, git history, old builds, backups and computer clutter.
 #   3. Checks the copy is complete and the data file is valid.
-#   4. Zips it as dist/task-list-os.zip, replacing any older one.
+#   4. Zips it as dist/agentic-task-list.zip, replacing any older one.
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-STAGE="$(mktemp -d "${TMPDIR:-/tmp}/task-list-os-build.XXXXXX")"
+STAGE="$(mktemp -d "${TMPDIR:-/tmp}/agentic-task-list-build.XXXXXX")"
 trap 'rm -rf "$STAGE"' EXIT
-NAME="Task List OS"
+NAME="Agentic Task List"
 OUT="$STAGE/$NAME"
 
 fail() { echo "RELEASE STOPPED: $1" >&2; exit 1; }
@@ -125,7 +125,7 @@ shared_version = (root / "apps/shared/VERSION").read_text().split()[0]
 if str(json.loads((root / "toolkit.json").read_text()).get("sharedVersion")) != shared_version:
     problems.append(f"toolkit.json sharedVersion is {json.loads((root / 'toolkit.json').read_text()).get('sharedVersion')!r} but apps/shared/VERSION says {shared_version}: change them together")
 # Shared parts are identical in every tool, so they must not name one. No file may use the old start-up names,
-# and no message in the scripts, the helper or the shared page code may say "Task List OS" (they read the tool's name from toolkit.json)
+# and no message in the scripts, the helper or the shared page code may say "Agentic Task List" (they read the tool's name from toolkit.json)
 skip_dirs = {".git", "dist", "maintainers", "node_modules"}
 for f in sorted(root.rglob("*")):
     if not f.is_file() or skip_dirs & set(f.relative_to(root).parts) or f.suffix in (".png", ".jpg", ".woff2", ".zip", ".gz", ".ico"):
@@ -158,8 +158,8 @@ for f in sorted(root.rglob("*")):
     for old in ("open-task-list", "start-task-list"):
         if old in txt:
             problems.append(f"{rel} uses the old name {old} (it is now open-the-app / start-app, the same in every tool)")
-    if re.match(r"setup/scripts/|apps/server/|apps/shared/js/", rel) and re.search(r"Task List OS|(?<!window\.)TaskListOS", txt):
-        problems.append(f"{rel} names a tool (Task List OS): shared parts read the name from toolkit.json")
+    if re.match(r"setup/scripts/|apps/server/|apps/shared/js/", rel) and re.search(r"Agentic Task List|(?<!window\.)TaskListOS", txt):
+        problems.append(f"{rel} names a tool (Agentic Task List): shared parts read the name from toolkit.json")
 for p in problems:
     print("  - " + p, file=sys.stderr)
 sys.exit(1 if problems else 0)
@@ -184,13 +184,13 @@ python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$OUT/apps/task-list/
 for f in toolkit.json apps/installed.json apps/shared/catalogue.json; do
   python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$OUT/$f" || fail "$f is not valid"
 done
-# A fresh download lists only Task List OS, and no test tool ever ships
-python3 -c 'import json,sys; t=json.load(open(sys.argv[1]))["tools"]; sys.exit(0 if [x["id"] for x in t]==["task-list"] else 1)' "$OUT/apps/installed.json" || fail "apps/installed.json must list only Task List OS"
+# A fresh download lists only Agentic Task List, and no test tool ever ships
+python3 -c 'import json,sys; t=json.load(open(sys.argv[1]))["tools"]; sys.exit(0 if [x["id"] for x in t]==["task-list"] else 1)' "$OUT/apps/installed.json" || fail "apps/installed.json must list only Agentic Task List"
 [ ! -e "$OUT/apps/test-tool" ] || fail "the test tool is in the release"
 if grep -rIl $'—' "$OUT" >/dev/null 2>&1; then fail "an em dash slipped in: $(grep -rIl $'—' "$OUT" | head -3)"; fi
 SKILLS=$(find "$OUT/.claude/skills" -name SKILL.md | wc -l | tr -d ' ')
 
 # ---------- 4. Zip (COPYFILE_DISABLE stops macOS adding hidden ._ files) ----------
-rm -f "$DIST/task-list-os.zip"
-(cd "$STAGE" && COPYFILE_DISABLE=1 zip -rqX "$DIST/task-list-os.zip" "$NAME")
-echo "Built dist/task-list-os.zip ($(du -h "$DIST/task-list-os.zip" | cut -f1 | tr -d ' '), $SKILLS skills)"
+rm -f "$DIST/agentic-task-list.zip"
+(cd "$STAGE" && COPYFILE_DISABLE=1 zip -rqX "$DIST/agentic-task-list.zip" "$NAME")
+echo "Built dist/agentic-task-list.zip ($(du -h "$DIST/agentic-task-list.zip" | cut -f1 | tr -d ' '), $SKILLS skills)"

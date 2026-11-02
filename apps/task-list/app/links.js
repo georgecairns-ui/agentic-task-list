@@ -79,8 +79,8 @@
     const r = range(ev.date, ev.time, ev.minutes);
     const esc = function (s) { return String(s || "").replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;"); };
     const lines = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Task List OS//EN", "BEGIN:VEVENT",
-      "UID:" + Date.now() + "@task-list-os", "DTSTAMP:" + stamp(new Date()),
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Agentic Task List//EN", "BEGIN:VEVENT",
+      "UID:" + Date.now() + "@agentic-task-list", "DTSTAMP:" + stamp(new Date()),
       "DTSTART:" + stamp(r.start), "DTEND:" + stamp(r.end),
       "SUMMARY:" + esc(ev.title), "DESCRIPTION:" + esc(ev.details), ev.location ? "LOCATION:" + esc(ev.location) : "",
       "END:VEVENT", "END:VCALENDAR"

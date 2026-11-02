@@ -15,7 +15,7 @@ Talk to them as the rest of this folder does: plain British English, short sente
 
 - `apps/installed.json`: the tools in this folder, in the order they were added. The first is the one they installed. Its own files (`CLAUDE.md`, `START-HERE.md`, `README.md`) are the folder's root files.
 - `apps/shared/catalogue.json`: each tool's `repository` (its folder name online).
-- `toolkit.json`: `version`, `sharedVersion` and `id`. If `id` is `small-business-toolkit`, this folder holds the whole toolkit as one piece: its `repository` is `small-business-toolkit` and it is fetched once, not tool by tool (step 2).
+- `toolkit.json`: `version`, `sharedVersion` and `id`. If `id` is `agentic-command-centre`, this folder holds the whole toolkit as one piece: its `repository` is `agentic-command-centre` and it is fetched once, not tool by tool (step 2).
 - `apps/shared/VERSION`: the shared version number.
 - `setup/as-installed/<repository>.tar.gz`: the exact copy of each download as it was installed or last updated. It is how you tell their changes from the kit's. A download with none (copied another way, or attached before these were saved) is compared without it: see step 4.
 
@@ -26,7 +26,7 @@ Make **one** temporary folder outside their workspace, once, and fetch every too
 - Mac: `T="$(mktemp -d)" || exit 1; echo "$T"`
 - Windows (PowerShell): `$T = Join-Path $env:TEMP ("update-" + (Get-Random)); New-Item -ItemType Directory -Force $T | Out-Null; $T`
 
-**The downloads.** For each tool in `apps/installed.json`, find its `repository` in the catalogue (for the whole toolkit, `small-business-toolkit`, once), and run, with `<T>` the path you noted:
+**The downloads.** For each tool in `apps/installed.json`, find its `repository` in the catalogue (for the whole toolkit, `agentic-command-centre`, once), and run, with `<T>` the path you noted:
 
 - Mac: `T="<T>"; mkdir -p "$T/new/<repository>" && curl -fsSL -o "$T/new/<repository>.tar.gz" https://github.com/georgecairns-ui/<repository>/archive/refs/heads/main.tar.gz && tar -xzf "$T/new/<repository>.tar.gz" --strip-components 1 -C "$T/new/<repository>"`
 - Windows (PowerShell): `$T = "<T>"; New-Item -ItemType Directory -Force "$T\new\<repository>" | Out-Null; curl.exe -fsSL -o "$T\new\<repository>.tar.gz" https://github.com/georgecairns-ui/<repository>/archive/refs/heads/main.tar.gz; if ($LASTEXITCODE -eq 0) { tar -xzf "$T\new\<repository>.tar.gz" --strip-components 1 -C "$T\new\<repository>" }`

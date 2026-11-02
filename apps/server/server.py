@@ -2,7 +2,7 @@
 """
 THE HELPER: the little helper that runs this folder's tools on this computer (Python version)
 ---------------------------------------------------------------------------------------------
-It calls itself by the folder's name: "name" in toolkit.json (for example "Ads OS").
+It calls itself by the folder's name: "name" in toolkit.json (for example "Agentic Ads").
 The same as server.js, for computers that have Python 3 but not Node. Claude uses whichever
 is available. It serves the app at http://localhost:4747 and lets it read and save
 the data files of the tools listed in apps/installed.json (for example apps/task-list/data/tasks.json),

@@ -1,4 +1,4 @@
-# Task List OS
+# Agentic Task List
 
 **A personal assistant for your business, run by Claude.** A free kit from [Get AI Powers](https://getaipowers.com).
 
@@ -6,7 +6,7 @@ Claude reads your email and drafts the replies. It writes up your calls and pull
 
 Nothing goes out without you. Claude reads and drafts; you decide and you send.
 
-Task List OS is part of a toolkit of 7 free tools from Get AI Powers. The others (a pipeline, proposals, content, money and more) show in the app's menu, and Get AI Powers sets them up with you on a free call.
+Agentic Task List is part of a toolkit of 7 free tools from Get AI Powers. The others (a pipeline, proposals, content, money and more) show in the app's menu, and Get AI Powers sets them up with you on a free call.
 
 ## What happens when you type /setup
 
@@ -39,12 +39,12 @@ You copy the kit, open it in the Claude desktop app (the Code tab) and type **/s
 
 1. **Open the Claude desktop app and choose the Code tab.** Any folder will do for this first step.
 2. **Ask Claude to fetch the kit.** Paste this:
-   > Copy Task List OS from https://github.com/georgecairns-ui/task-list-os into a folder called "Task List OS" in my Documents, using the copy line in its START-HERE.md (not git), then tell me how to open it and set it up.
+   > Copy Agentic Task List from https://github.com/georgecairns-ui/agentic-task-list into a folder called "Agentic Task List" in my Documents, using the copy line in its START-HERE.md (not git), then tell me how to open it and set it up.
 
    Claude copies everything onto your computer and tells you how to open the new folder. In the desktop app, you choose the folder in the Code tab.
 
-   *For Claude, if this README is all you have:* read START-HERE.md on the repository page at https://github.com/georgecairns-ui/task-list-os, then copy the folder with the Mac or Windows line in it.
-3. **In the Code tab, choose the Task List OS folder and pick "Yes, I trust this folder".** The first time, the app asks whether you trust the folder and warns that it pre-approves some permissions. Those permissions only let Claude update your task list, your business notes and your files folder, search the web and start the task list, without stopping to ask each time. It still can't send, delete or change anything in your email or other apps.
+   *For Claude, if this README is all you have:* read START-HERE.md on the repository page at https://github.com/georgecairns-ui/agentic-task-list, then copy the folder with the Mac or Windows line in it.
+3. **In the Code tab, choose the Agentic Task List folder and pick "Yes, I trust this folder".** The first time, the app asks whether you trust the folder and warns that it pre-approves some permissions. Those permissions only let Claude update your task list, your business notes and your files folder, search the web and start the task list, without stopping to ask each time. It still can't send, delete or change anything in your email or other apps.
 4. **Type `/setup`.**
 
 Claude asks a few quick questions (which email you use, whether you record calls, which apps you use), connects them one by one (mostly sign in and approve), learns how your business works, and fills your task list with your real work. It asks about your services and builds you your own skills, saved in the **skills-to-upload** folder with a note on how to add them to Claude. It also asks for your website or brand guidelines, so the app comes out in your own colours, font and logo. Then it opens your task list and gives you its link, **http://localhost:4747**. Bookmark it. That's it.
@@ -64,7 +64,7 @@ Apps connect through Claude's Connectors: each one asks you to sign in on that a
 
 ## Your information
 
-Your tasks and notes live in this folder on your computer. Claude reads your email, calendar and apps through the connections you approve, and only ever reads and drafts. It never sends, deletes, pays or posts for you. There's no Task List OS account or server; Get AI Powers can't see any of it. Read [docs/PRIVACY-AND-SAFETY.md](docs/PRIVACY-AND-SAFETY.md) for the detail.
+Your tasks and notes live in this folder on your computer. Claude reads your email, calendar and apps through the connections you approve, and only ever reads and drafts. It never sends, deletes, pays or posts for you. There's no Agentic Task List account or server; Get AI Powers can't see any of it. Read [docs/PRIVACY-AND-SAFETY.md](docs/PRIVACY-AND-SAFETY.md) for the detail.
 
 ## Make it yours
 
@@ -72,7 +72,7 @@ Change the colours, labels and folders by asking Claude. See [docs/CUSTOMISING.m
 
 ## Want it set up properly for you?
 
-Task List OS works on its own. If you'd like help building your folders, business context and Claude skills around how your business really works, Get AI Powers can help. Find us at [getaipowers.com](https://getaipowers.com).
+Agentic Task List works on its own. If you'd like help building your folders, business context and Claude skills around how your business really works, Get AI Powers can help. Find us at [getaipowers.com](https://getaipowers.com).
 
 ## What's inside
 
@@ -89,7 +89,7 @@ skills-to-upload/      the skills Claude builds for your business, packed up to 
 files/                 your business documents, in numbered folders
 apps/                  the task list app and its look (theme.css)
 docs/                  customising, privacy and safety
-maintainers/           for people developing Task List OS itself
+maintainers/           for people developing Agentic Task List itself
 ```
 
 ## Licence

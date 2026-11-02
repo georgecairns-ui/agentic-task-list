@@ -1,5 +1,5 @@
 /*
-  TASK LIST OS: the app
+  AGENTIC TASK LIST: the app
   ---------------------
   Ties everything together:
   1. Connects to data/tasks.json through the shared store.
@@ -116,7 +116,7 @@
 
   function gateCard(art, eyebrow, title, body, actions, small) {
     return '<div class="gate__card">' +
-      '<div class="gate__text"><div class="gate__brand"><img src="../shared/images/claude-icon.png" alt="" width="28" height="28"><span>Task List OS</span></div>' +
+      '<div class="gate__text"><div class="gate__brand"><img src="../shared/images/claude-icon.png" alt="" width="28" height="28"><span>Agentic Task List</span></div>' +
       (eyebrow ? '<span class="label">' + esc(eyebrow) + "</span>" : "") + "<h1>" + title + "</h1>" + body +
       '<div class="gate__actions">' + actions + "</div>" + (small ? '<p class="gate__small">' + small + "</p>" : "") + "</div>" +
       '<div class="gate__art"><img src="' + C.ART[art] + '" alt="" width="440" height="440"></div></div>';
@@ -128,7 +128,7 @@
     }
     if (status === "needs-helper") {
       return showGate(gateCard("welcome", "", "Your task list opens from Claude.",
-        "<p>Claude runs your task list on this computer and gives you a link to it. In Claude Code, in your Task List OS folder, just say:</p>" +
+        "<p>Claude runs your task list on this computer and gives you a link to it. In Claude Code, in your Agentic Task List folder, just say:</p>" +
         C.say("Open my task list") +
         "<p class=\"gate__note\">Not set up yet? Say <strong>/setup</strong> instead. Claude connects your email, calendar and calls and builds your list first.</p>",
         "",
@@ -155,7 +155,7 @@
     // needs-connect: the first visit
     showGate(gateCard("welcome", "One-time setup", "Your day, sorted by Claude. <span class=\"accent\">Approved by you.</span>",
       "<p>Claude sorts your inbox, writes up your calls and drafts your replies. Everything lands here for you to approve. It all lives in a file on your own computer, in the folder Claude works from. Connect it once.</p>" +
-      '<ol class="gate__steps"><li><span>Click <strong>Connect your task list</strong>.</span></li><li><span>Choose your <strong>Task List OS</strong> folder, the one with START-HERE.md in it.</span></li><li><span>When Chrome asks to let this page edit files, click <strong>Allow</strong>.</span></li></ol>' +
+      '<ol class="gate__steps"><li><span>Click <strong>Connect your task list</strong>.</span></li><li><span>Choose your <strong>Agentic Task List</strong> folder, the one with START-HERE.md in it.</span></li><li><span>When Chrome asks to let this page edit files, click <strong>Allow</strong>.</span></li></ol>' +
       (message ? '<p class="gate__error" role="alert">' + icon("alert") + esc(message) + "</p>" : ""),
       '<button type="button" class="btn btn--primary btn--lg" data-action="connect">' + icon("folder") + "Connect your task list</button>",
       "No account, nothing to install. Your tasks never leave your computer."));
@@ -184,7 +184,7 @@
 
   function storeInfo() {
     return { canChange: !store.isHelper(),
-      folder: store.isHelper() ? "Your Task List OS folder, on this computer" : store.folderName() };
+      folder: store.isHelper() ? "Your Agentic Task List folder, on this computer" : store.folderName() };
   }
 
   function ctx() {
@@ -199,7 +199,7 @@
       pill.hidden = false;
       pill.className = "save-status" + (just ? " is-saving" : "");
       pill.innerHTML = '<span class="save-status__dot"></span><span class="save-status__text">' + (just ? "Saved" : "All changes saved") + "</span>";
-      pill.title = statusDetail.helper ? "Saved in your Task List OS folder" : "Connected to " + (statusDetail.folderName || "your folder");
+      pill.title = statusDetail.helper ? "Saved in your Agentic Task List folder" : "Connected to " + (statusDetail.folderName || "your folder");
       if (just) setTimeout(function () { if (status === "ready") renderChrome(); }, 3100);
     } else if (status === "error" && data) {
       pill.hidden = false; pill.className = "save-status is-error";
@@ -262,7 +262,7 @@
     root.scrollTop = scroll;
     $("#viewTitle").textContent = view.title(c);
     $("#viewSub").textContent = view.sub ? view.sub(c) : "";
-    document.title = view.title(c) + " · Task List OS";
+    document.title = view.title(c) + " · Agentic Task List";
   }
 
   // The record panel
@@ -302,7 +302,7 @@
 
   function setScope(scope) { state.tasksScope = scope; remember("tlos-tasks-scope", scope); }
   function setTasksView(v) { state.tasksView = v; remember("tlos-tasks-view", v); }
-  // Pages that are now views of Tasks (and People, which lives in Pipeline OS): old links still land somewhere sensible
+  // Pages that are now views of Tasks (and People, which lives in Agentic Pipeline): old links still land somewhere sensible
   function resolve(view) {
     const map = { today: ["today"], week: ["week"], calendar: [null, "calendar"], all: ["all"], waiting: ["all"], done: ["all", "list"], dump: [], people: [] };
     if (!map[view]) return V[view] && ["preferences", "tasks", "replies", "review", "calls"].indexOf(view) > -1 ? view : "tasks";
@@ -380,7 +380,7 @@
     const t = M.taskById(data, taskId);
     if (!t || !t.scheduledDate) return;
     const ev = { title: t.title, date: t.scheduledDate, time: t.scheduledTime || "09:00", minutes: t.durationMinutes || 30,
-      details: [t.notes, t.guide && t.guide.summary ? "How to do it: " + t.guide.summary : ""].filter(Boolean).join("\n\n") + "\n\nFrom Task List OS" };
+      details: [t.notes, t.guide && t.guide.summary ? "How to do it: " + t.guide.summary : ""].filter(Boolean).join("\n\n") + "\n\nFrom Agentic Task List" };
     const provider = data.settings.calendarProvider || "google";
     const url = L.calendarUrl(ev, provider);
     if (url) L.open(url); else L.downloadIcs(ev);
@@ -552,7 +552,7 @@
   function meetingEvent(e) {
     const st = M.splitLocal(e.start), en = M.splitLocal(e.end);
     return { title: e.title, date: st.date, time: M.fromMinutes(st.minutes), minutes: Math.max(15, (en.minutes || st.minutes + 30) - st.minutes),
-      location: e.location, guests: e.guests, details: [e.notes, "Added from Task List OS"].filter(Boolean).join("\n\n") };
+      location: e.location, guests: e.guests, details: [e.notes, "Added from Agentic Task List"].filter(Boolean).join("\n\n") };
   }
   function openInCalendar(e) {
     const ev = meetingEvent(e);
@@ -608,7 +608,7 @@
       // getting in
       case "connect":
         store.connect().catch(function (err) {
-          renderGate(err && err.kind === "wrong-folder" ? "That folder doesn't have your task list in it. Choose your Task List OS folder, the one with START-HERE.md in it." : "That didn't work. Please try again, and click Allow when Chrome asks.");
+          renderGate(err && err.kind === "wrong-folder" ? "That folder doesn't have your task list in it. Choose your Agentic Task List folder, the one with START-HERE.md in it." : "That didn't work. Please try again, and click Allow when Chrome asks.");
         });
         break;
       case "reconnect": store.reconnect().catch(function () { renderGate(); }); break;
