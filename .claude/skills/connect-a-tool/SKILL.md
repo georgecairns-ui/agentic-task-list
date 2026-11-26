@@ -44,7 +44,7 @@ Sometimes a connection can't be finished today because someone else has to act: 
 2. Record it in `apps/home/data/connections.json` as `"status": "waiting"`, with `waitingOn` (who, in a word or two, such as "IT") and a `note` of the one thing still to do. Add a line to "Notes for next time" in `setup/progress.md`.
 3. Say in one line what won't work until it's in, then go on to the next connection or step.
 
-When it's sorted (they press **Finish connecting** on Home, or tell you), come back here: switch on or connect it, prove it with a read, do what setup would have done with it (for an inbox, read its last 30 days as in the email step; for a calendar, copy it in), then record it as `connected`.
+When it's sorted (they press **Finish connecting** on Home, or tell you), come back here: switch on or connect it, prove it with a read, do what setup would have done with it (for an inbox, read its last 30 days as in the email step; for a calendar, copy it in alongside any others), then record it as `connected`. If check-ins are already set up, redo the pre-approval step of this folder's check-in setup for this app too, using the rule in its guide, so scheduled check-ins can read it without stopping.
 
 ## 3. Prove it, then record it
 

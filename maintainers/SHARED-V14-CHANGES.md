@@ -10,7 +10,7 @@ Shared version 14, 26 November 2026. Everything in `SHARED-V3-CHANGES.md` to `SH
 
 ## What version 14 does
 
-1. **Setup starts on its own** (CR-1, the CLAUDE.md part). When `Setup: not done yet`, Claude starts setup instead of offering it, with one line first, and any "get this going" wording routes to it ("install and run", "set this up", "get it going"). The setup skill's description lists the same words.
+1. **Setup starts on its own** (CR-1, the CLAUDE.md part). When `Setup: not done yet`, Claude starts setup instead of offering it, whatever the person's first message says, with one line first, and any "get this going" wording routes to it ("install and run", "set this up", "get it going"). The setup skill's description lists the same words.
 2. **Every inbox, then one inbox** (CR-2). The first questions ask for every work email address and where they check meetings, and whether each Microsoft address is work or personal. The email step lists them back in a table (address, where it lives, can Claude connect it), connects each one that has a connector, proves each, reads the last 30 days of each, and every tool reads them as one inbox. An inbox with no connector forwards into a connected one. No third-party service. `connections.json` has one row per inbox; one inbox with email and calendar from the same provider still shares 1 row. A draft replies from the address the email came to (`draft.from`, and `draft.provider` when it isn't their main inbox, so Draft opens in the right place).
 3. **Waiting on IT doesn't stop setup** (CR-3). New status `waiting`, with `waitingOn` ("IT"). It is parked, everything else connects, and setup goes on. The Home Connections box shows "Waiting on IT" with a **Finish connecting** button, which brings Claude back to `connect-a-tool` ("Waiting on someone else") to connect, prove and read its last 30 days. When nothing at all can be connected for email yet, setup still goes on and says what won't work. A person who chooses not to connect email at all still gets the one-line warning and the choice to stop (unchanged). "Email and calendar come before any other connection" becomes "ask about email and calendar before any other connection": the order stays, the gate goes. The hand-over lists every `waiting` item with the one thing to do next, and its checklist accepts `waiting`.
 4. **Talk instead of type** (CR-4). One line just before the first message of questions, in every guide mode: press the microphone button in the message box and speak. Beginner mode adds that rambling is fine.
@@ -55,7 +55,7 @@ Agentic Task List's own versions are the reference. "Its own equivalent" means t
 - **`.claude/skills/setup/SKILL.md`:** the description lists "install and run", "set this up" or "get it going".
 - **`context/README.md`:** the `goal.md` row, first.
 - **`START-HERE.md`:**
-  - The intro line for the person: "Setup starts on its own; if it doesn't, type **/setup** (or say "set me up")."
+  - The intro line for the person: "Open this folder in the Claude desktop app (the Code tab) and type anything, even "hello". Setup starts from there. (Or type **/setup**.)"
   - The beginner row of the guide-mode table ends with the "You just learned" sentence.
   - "email and calendar come before any other connection" becomes "you ask about email and calendar before any other connection" (tools without email keep their own wording around it).
   - The colleague line, straight after the guide-mode paragraph, word for word.
@@ -72,7 +72,9 @@ Agentic Task List's own versions are the reference. "Its own equivalent" means t
 - **The check-in skill:** reads every connected inbox (tools that read email); leaves `waiting` rows alone in its Connections step; opens with one line on progress towards their goal.
 - **`triage-inbox`** (and Pipeline's own inbox reader): every connected inbox, as one; drafts carry `from` and `provider`.
 - **`keep-context-fresh`:** `goal.md` in its file list and the goal line.
-- **The tool's own app,** where it opens drafts (Task List: `app.js`, `drawer.js`, `view-replies.js`; Pipeline: its own equivalent): a draft's own `provider` wins over `settings.emailProvider`. Document `from` and `provider` in the tool's `apps/<tool>/CLAUDE.md`.
+- **The step that fills the app first** (Task List `07-first-run.md`): with no inbox or calendar connected yet (each `no-connector` or `waiting`), leave the inbox part out and say it fills in once one is. The hand-over checklist accepts an empty `replies` and shows the empty Inbox instead of the Draft test.
+- **Every calendar, merged:** the email step's calendar copy and the check-in's calendar step copy from every connected calendar into one list.
+- **The tool's own app,** where it opens drafts (Task List: `app.js`, `drawer.js`, `view-replies.js`; Pipeline: its own equivalent): a draft's own `provider` wins over `settings.emailProvider`, and when a draft has `from`, the panel and the toast say "Send it from <address>". Document `from` and `provider` in the tool's `apps/<tool>/CLAUDE.md`.
 - **`setup/connections/README.md`:** keep your own table, add the folk row if you ship `folk.md`; take the intro line about `where-to-click.md` and the whole "Recording a connection" section, which is identical in every tool.
 - **The tool's own connect step tables** that list CRMs: add folk where HubSpot and Pipedrive are listed.
 - **`toolkit.json`:** `sharedVersion` `"14"`.
@@ -90,11 +92,20 @@ Agentic Task List's own versions are the reference. "Its own equivalent" means t
 7. **2 addresses on one connector:** if a connector takes only one account at a time, the second address forwards into the connected one. Whether Claude's Gmail connector takes 2 accounts is not confirmed, so the wording is conditional.
 8. **The goal line in check-ins** appears only when the run found something that moves it, so scheduled runs stay quiet.
 9. **Step 5's priorities question** is asked only if the goal doesn't already say it.
+10. **Setup time stays 30 to 40 minutes** in Agentic Task List's `CLAUDE.md` line, matching its README and START-HERE, not the spec's "about 20 minutes" example. Each tool uses its own setup time.
+11. **"Setup starts on its own" means on their first message.** In the Code tab Claude never speaks first, so the person types anything ("hello") and `CLAUDE.md` starts setup whatever it says. The kit's paste prompt (CR-1, kit) tells them this when it hands over the folder.
+12. **The reply address is shown, not set.** Gmail's compose link has no documented way to choose the sending account, so a draft's `from` is shown in the panel and the toast ("Send it from ..."). `provider` still picks Gmail or Outlook.
+13. **Name, business and website move into the first questions,** so the search in `first-questions.md` section 3 knows their website. Task List's step 1 then asks only what the business does, if the search didn't say.
+14. **Saying things once.** The Team and Enterprise admin line is marked `(admin line said)` after the plan in `setup/progress.md`, and the work-or-personal answer for each Microsoft address is written in `context/tools.md`, so `where-to-click.md` and `microsoft-365.md` don't repeat them.
+15. **Finish connecting redoes the check-in pre-approval** for the newly connected app, so scheduled check-ins don't stop at a permission prompt.
+
+**Whole-branch review (26 November 2026)** of Agentic Task List found 2 must-fix (James's real details in examples, now Sam and Fern & Finch; "setup starts on its own" with nobody typing) and 7 should-fix items (decisions 11 to 15, every calendar merged, the no-inbox route in steps 7 and 9). All fixed before the other tools copied the final wording.
 
 ## Not checked yet (before release)
 
 - **CR-4:** where the microphone button sits in the Code tab, on Mac and on Windows. Anthropic's pages say dictation works in the Code tab but don't say where. The tip says "the microphone button in the message box".
 - **CR-5:** `where-to-click.md` is from Anthropic's pages (26 November 2026) and James's screen. It must be checked on a real Pro, Team and Enterprise account.
+- **CR-10:** the approval prompts when Claude reads `~/Library/CloudStorage` or a Windows synced folder (setup warns a beginner to expect them).
 - **CR-2:** a real setup with 2 inboxes, and with a personal Outlook.com address on Pro or Max, and a work Microsoft 365 address waiting on IT.
 - **CR-11:** reading a pasted claude.ai artifact link in a customer's Code tab (documented for Claude Code on paid plans; not tried here).
 - **CR-12:** `folk.md` on a real folk account.

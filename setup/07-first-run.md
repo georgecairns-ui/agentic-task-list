@@ -10,7 +10,7 @@ Edit `apps/task-list/data/tasks.json`:
 
 1. The task list starts empty (no sample tasks), so everything you add now is their real work.
 2. **People:** add their team, key clients and suppliers from `context/people.md` to `people`.
-3. **Calendar and inbox:** already filled in step 2 (2.4) from the last 30 days. Read `triage` and check the counts are there. If step 2 ended at "no connector", skip this.
+3. **Calendar and inbox:** already filled in step 2 (2.4) from the last 30 days. Read `triage` and check the counts are there. If no inbox or calendar is connected yet (each is `no-connector` or `waiting`), leave this out and say it fills in once one is.
 4. **Calls:** if a recorder is connected, follow `.claude/skills/process-calls` for the **last 14 days**. Each call goes into `meetings` with a summary, its actions as suggested tasks and a follow-up draft.
 5. **Their own list:** ask one question, "Anything else on your mind that I won't have found in your email? Just list it." Add each line to `dump`, then follow `.claude/skills/sort-my-brain-dump`.
 6. **Recurring jobs** from `context/routines.md` become tasks with their next due date.

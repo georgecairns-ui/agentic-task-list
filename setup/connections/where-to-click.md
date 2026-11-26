@@ -1,6 +1,6 @@
 # Where to click: finding Connectors on each Claude plan
 
-Every guide in this folder says "open Connectors" and points here, so when Claude's screens change, this is the one file to update. Claude's screens differ by plan, and new screens reach Pro first, then Team, and Enterprise last.
+Every guide in this folder says "open Connectors" and points here, so when Claude's screens change, this is the one file to update. Claude's screens can differ by plan.
 
 Use the plan in `setup/progress.md` (`Claude plan:`). If it says `not asked yet`, ask: "Which Claude plan are you on: Pro, Max, Team or Enterprise?" and write the answer there.
 
@@ -18,7 +18,7 @@ They add connectors to their own account. No one else has to approve them.
 2. If their organisation has already added the connector, they choose it, then **Connect**, and sign in with their own account.
 3. If they see **Request**, or a note asking them to contact an organisation Owner, their organisation hasn't added it yet. Their Claude Owner adds it for everyone (**Connect for your team** on the connector's page, or **Organization settings**, then **Connectors**). Offer to draft a short message they can send their Owner. You never send it.
 
-Say once, the first time a connector comes up: "On a Team or Enterprise plan, your administrator may need to approve a connection before you can use it." When one is waiting on someone else, it is parked as `waiting` and setup goes on (`.claude/skills/connect-a-tool`, "Waiting on someone else").
+Unless `setup/progress.md` already says `(admin line said)`, say once, the first time a connector comes up: "On a Team or Enterprise plan, your administrator may need to approve a connection before you can use it." When one is waiting on someone else, it is parked as `waiting` and setup goes on (`.claude/skills/connect-a-tool`, "Waiting on someone else").
 
 ## Switching one on in this chat
 

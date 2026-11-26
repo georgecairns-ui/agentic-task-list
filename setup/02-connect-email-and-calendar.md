@@ -10,8 +10,8 @@ Then list back every address from step 1 in one short table, and check it with t
 
 | Address | Where it lives | Can I connect it? |
 |---|---|---|
-| james@cloudsocials.example | Outlook, work account (Microsoft 365) | Yes, with the Microsoft 365 connection. Your IT team may need to approve it |
-| james.thorpe@gmail.example | Gmail | Yes, with the Gmail connection |
+| sam@fernandfinch.example | Outlook, work account (Microsoft 365) | Yes, with the Microsoft 365 connection. Your IT team may need to approve it |
+| sam.ellis@gmail.example | Gmail | Yes, with the Gmail connection |
 
 Add the calendar too, if it's somewhere else. If there's only one address, one line will do.
 
@@ -41,7 +41,7 @@ Then look up this session's connections (`session_connectors_status`) and act on
 
 Keep going round this table until each one is on, or parked as `waiting`. Never ask for their email password: they sign in on Google's or Microsoft's own screen.
 
-If the same connector can only be signed in to one account at a time and they have 2 addresses there, connect the main one and treat the other as having no connector of its own (2.5): it forwards into the connected one.
+Some connectors take one account at a time (Microsoft 365 connects one Microsoft account at a time). When they have 2 addresses on the same connector, connect the main one and treat the other as having no connector of its own (2.5): it forwards into the connected one.
 
 ## 2.3 Prove it
 
@@ -58,8 +58,8 @@ Tell them first: "I'll now read the last 30 days of your email, so your task lis
 1. For every connected inbox, list every thread from the last 30 days by sender and subject only.
 2. Leave out newsletters, receipts, automatic notifications and no-reply senders.
 3. Open only the threads from real people, in batches. After each batch, one progress line: "Read 140 of 380 conversations, 12 need a reply so far."
-4. Follow `.claude/skills/triage-inbox` for what you read: threads still waiting on them go into `replies` with a draft, from the address the email came to; requests and promises become suggested tasks. Fill in `triage` with the counts.
-5. Copy calendar events from yesterday to 14 days ahead into `events` (see `apps/task-list/CLAUDE.md`). Read the last 30 days of the calendar only to learn who they meet and what's recurring (people, routines), without copying it into `events`.
+4. Follow `.claude/skills/triage-inbox` for what you read: threads still waiting on them go into `replies` with a draft that notes the address the email came to; requests and promises become suggested tasks. Fill in `triage` with the counts.
+5. Copy calendar events from yesterday to 14 days ahead into `events` (see `apps/task-list/CLAUDE.md`), from every connected calendar, merged into one list. Read the last 30 days of the calendar only to learn who they meet and what's recurring (people, routines), without copying it into `events`.
 
 Every tool reads them as one inbox from now on. Keep the counts for the hand-over. Drafts stay drafts: nothing is sent, labelled, archived or marked as read.
 
@@ -89,5 +89,5 @@ In `context/tools.md` ("Connected apps"): each inbox and calendar, how connected
 
 - Read only to understand work. Don't read more than you need.
 - Never send, reply, forward, delete, archive, label, mark as read, unsubscribe or accept an invite, even though the connection technically allows some of these.
-- Drafts live in the task file (`replies`), and the person opens them with the app's Draft button. Each draft replies from the address the email came to. Save a draft into their mailbox only if they ask you to for that specific email.
+- Drafts live in the task file (`replies`), and the person opens them with the app's Draft button. Each draft notes the address the email came to (`from`), and the app tells them to send it from there. Save a draft into their mailbox only if they ask you to for that specific email.
 - Don't copy whole private emails into the task file. A one-line summary, the reason it needs a reply, and your draft are enough.

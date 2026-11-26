@@ -48,7 +48,7 @@ Default for every app: read, and prepare drafts where the app allows. Claude nev
       "note": "Read; prepare drafts. Never send, delete, archive or label."
     },
     "microsoft-365": {
-      "name": "Microsoft 365 (james@example.com)",
+      "name": "Microsoft 365 (sam@fernandfinch.example)",
       "status": "waiting",
       "waitingOn": "IT",
       "how": "Claude connector: Microsoft 365",

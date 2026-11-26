@@ -16,7 +16,7 @@ The routine that makes the task list feel live. It runs a few times a day, at th
 ## Steps
 
 1. Read `apps/task-list/data/tasks.json` now. Note `triage.lastRunAt`: everything since then is new.
-2. **Calendar.** If a calendar is connected, copy events from yesterday to 14 days ahead into `events`, replacing the list, and set `eventsSyncedAt`.
+2. **Calendar.** Copy events from yesterday to 14 days ahead from every connected calendar, merged into one list, into `events`, replacing the list, and set `eventsSyncedAt`.
 3. **Inbox.** For every connected inbox, follow `.claude/skills/triage-inbox` for emails since `triage.lastRunAt` (or the last 24 hours if it's empty).
 4. **Calls.** If a call recorder is connected, follow `.claude/skills/process-calls` for calls since the last run.
 5. **Replies already dealt with.** For each reply still `waiting`, check the thread: if the person has since replied themselves, set its `status` to `replied`.

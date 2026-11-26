@@ -1,6 +1,6 @@
 # Step 1: quick questions
 
-Goal: in one short exchange, learn what the person uses, so every later step is about their apps and nothing else.
+Goal: in a few short messages, learn what the person uses, so every later step is about their apps and nothing else.
 
 ## 1.1 Check what you can reach (quietly, before asking anything)
 
@@ -20,7 +20,7 @@ Open with what you found in 1.1, so they see you've already looked: "You've alre
 
 > To set this up properly I need to know a few things. Short answers are fine.
 >
-> 1. Your first name, your business's name, and in a sentence what it does. And what's your website? (I'll use it to learn about the business and to make your task list look like it.)
+> 1. In a sentence, what does your business do? (Leave it out if what you found already says.)
 > 2. Do you record your calls or meetings? If so, with what? (For example Fathom, Fireflies, Otter, Granola, tl;dv, Read AI, Zoom, Microsoft Teams or Google Meet.)
 > 3. Which other apps do you use for the business? For example accounts (Xero, QuickBooks, FreeAgent), customers and sales (HubSpot, Pipedrive, folk, a spreadsheet), payments (Stripe), files (Google Drive, OneDrive), team chat (Slack, Teams), notes (Notion), bookings (Calendly).
 > 4. Which days and hours do you usually work?
@@ -28,7 +28,7 @@ Open with what you found in 1.1, so they see you've already looked: "You've alre
 
 ## 1.3 Write it down
 
-Put their website in `context/business.md` ("Website:"), so step 5 can use it without asking again.
+Their name, business and website are already in `context/business.md` from `setup/first-questions.md`, so step 5 uses them without asking again.
 
 Fill in `context/tools.md`:
 - "Your setup": computer, Claude plan, workspace location, where their files live, every email address with its provider (work or personal), calendar provider, solo or team.

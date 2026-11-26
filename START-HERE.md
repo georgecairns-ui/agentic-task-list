@@ -1,6 +1,6 @@
 # Start here
 
-> **If you're a person reading this:** you don't need to do anything in this file. Open this folder in the Claude desktop app (the Code tab). Setup starts on its own; if it doesn't, type **/setup** (or say "set me up"). Claude interviews you for a few minutes, connects your email, calendar and the apps you use, builds you your own skills for how your business works, and fills your task list with your real work. Most people are done in 30 to 40 minutes. The first time you open the folder, the app asks whether you trust it: choose **Yes, I trust this folder**. That lets Claude update your task list and notes without asking every time; it still can't send or delete anything.
+> **If you're a person reading this:** you don't need to do anything in this file. Open this folder in the Claude desktop app (the Code tab) and type anything, even "hello". Setup starts from there. (Or type **/setup**.) Claude interviews you for a few minutes, connects your email, calendar and the apps you use, builds you your own skills for how your business works, and fills your task list with your real work. Most people are done in 30 to 40 minutes. The first time you open the folder, the app asks whether you trust it: choose **Yes, I trust this folder**. That lets Claude update your task list and notes without asking every time; it still can't send or delete anything.
 
 ---
 

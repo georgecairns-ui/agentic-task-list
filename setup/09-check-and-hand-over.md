@@ -9,7 +9,7 @@ Check these yourself. Fix anything that fails, then check again.
 **The task file** (`apps/task-list/data/tasks.json`)
 - [ ] Valid, and reads back cleanly.
 - [ ] Every task has a unique `id`, a `title`, a valid `category` and `status`. Every suggested task has a `source`.
-- [ ] `replies` has a draft for every email that needs an answer, in their voice, with `to` filled in.
+- [ ] `replies` has a draft for every email that needs an answer, in their voice, with `to` filled in. (No inbox connected yet: `replies` is empty, and that's fine.)
 - [ ] `meetings` has the recent calls (if a recorder is connected), each with `actionTaskIds` that point at real tasks.
 - [ ] `events` covers this week, and `triage.lastRunAt` is set.
 - [ ] `people` lists their key people; tasks about them have `personId`.
@@ -30,7 +30,7 @@ Check these yourself. Fix anything that fails, then check again.
 
 **With them** (ask them to do these 3 things)
 - [ ] They open **http://localhost:4747** (or their bookmark). They see "Good morning, [name]", the line saying when you last checked, and your suggestions.
-- [ ] In the **Inbox**, press **Draft** on one. The email opens in Gmail or Outlook, written and addressed. (They don't have to send it.)
+- [ ] In the **Inbox**, press **Draft** on one. The email opens in Gmail or Outlook, written and addressed. (They don't have to send it.) With no inbox connected yet, show them the empty Inbox instead and say it fills in once their email is connected.
 - [ ] On **Review**, approve one suggestion. Then read the task file again and check it changed. Tell them: "That's working both ways. I can see you approved [task]."
 
 ## 9.2 Note what's missing, gently
@@ -53,7 +53,7 @@ Mention it once. Never suggest the task list is broken without it.
 3. Start with their goal, in one line: what they want to achieve (from `context/goal.md`) and that everything here is set up to help with it. Then tell them what you did, as a short list with real numbers, so they see it in one go. For example: "Connected Gmail, Google Calendar, Fathom and Xero. Sorted 143 emails and drafted 9 replies. Wrote up 4 calls with 11 actions. Built you 4 skills. Found 6 tasks I can do for you." Add, in one line each: how many emails from the last 30 days you read, how many need a reply, which apps are connected, and which are export-only.
 4. **Anything still waiting.** List every `waiting` connection with the one thing to do next: "Microsoft 365 is waiting on your IT team to approve it. When they have, press Finish connecting on Home, or tell me, and I'll read its last 30 days then."
 5. **Files you said you'd share.** List any still `to find` in `setup/progress.md`, by name.
-6. **Joining up the rest.** If anything is `no-connector` or `export-only`, say once: "Want these joined up with something you already use? Book a call with Joey or George," with the booking link from `apps/shared/catalogue.json`. The Connections box on Home has the same link next to each one.
+6. **Joining up the rest.** If anything is `no-connector` or `export-only`, say once: "Want these joined up with something you already use? Book a call with Joey or George," with the booking link from `apps/shared/catalogue.json`. The Connections box on Home has the same link.
 7. Remind them about their skills in one line: they're in the **skills-to-upload** folder, and adding them to Claude (Customize, then Skills) means they work in every conversation, including on their phone.
 8. Then tell them, briefly:
    - What's connected, and that you only read and draft.

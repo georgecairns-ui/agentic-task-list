@@ -16,17 +16,19 @@ In beginner mode, add: "It's fine to ramble. I'll sort it out."
 
 Leave out anything you already know (from this conversation, `setup/progress.md`, `context/`, or the folder's path), and say in one line what you already know. Ask in their guide mode (beginner: 2 at a time).
 
-> 1. Are you on a Mac or Windows?
-> 2. Which Claude plan are you on: Pro, Max, Team or Enterprise?
-> 3. Where do you keep your work files: Google Drive, OneDrive, Dropbox, or just on this computer? And roughly which folders?
-> 4. Which email addresses do you use for work, and where do you check your meetings? (Lots of people have more than one. Tell me all of them.)
-> 5. What do you already use to run this side of the business? For example a CRM, your own dashboards or reports, a task app or a spreadsheet.
-> 6. What do you want this to help you achieve over the next 3 months? In your own words, with a number if you can.
+> 1. Your name, your business's name and its website?
+> 2. Are you on a Mac or Windows?
+> 3. Which Claude plan are you on: Pro, Max, Team or Enterprise?
+> 4. Where do you keep your work files: Google Drive, OneDrive, Dropbox, or just on this computer? And roughly which folders?
+> 5. Which email addresses do you use for work, and where do you check your meetings? (Lots of people have more than one. Tell me all of them.)
+> 6. What do you already use to run this side of the business? For example a CRM, your own dashboards or reports, a task app or a spreadsheet.
+> 7. What do you want this to help you achieve over the next 3 months? In your own words, with a number if you can.
 
-Ask question 4 only if this folder's setup connects email (it has a step that connects email and calendar). For every Microsoft address, ask whether it's a work account their business or IT team manages, or a personal Outlook.com or Hotmail address: don't assume.
+Ask question 5 only if this folder's setup connects email (it has a step that connects email and calendar). For every Microsoft address, ask whether it's a work account their business or IT team manages, or a personal Outlook.com or Hotmail address: don't assume. Write the answer next to the address in `context/tools.md`, so the email step doesn't ask again.
 
 Write down:
-- The plan in `setup/progress.md` (`Claude plan: Pro`, `Max`, `Team` or `Enterprise`). On Team or Enterprise, say once: "On a Team or Enterprise plan, your administrator may need to approve a connection before you can use it. If that happens, I'll park it and we'll carry on with the rest."
+- Their name and business in `context/business.md`, and the website there too ("Website:").
+- The plan in `setup/progress.md` (`Claude plan: Pro`, `Max`, `Team` or `Enterprise`). On Team or Enterprise, say once: "On a Team or Enterprise plan, your administrator may need to approve a connection before you can use it. If that happens, I'll park it and we'll carry on with the rest." Then add `(admin line said)` after the plan, so it isn't said again.
 - The computer, storage and plan in `context/tools.md` ("Your setup").
 - Every email address, its provider, and whether it's work or personal, in `context/tools.md`. The email step lists them back to them.
 - What they already use, in `context/tools.md` ("Connected apps"), one row each, "to do". The step that connects apps connects each one that has a connector (`.claude/skills/connect-a-tool`); anything without one is recorded as not supported yet, with what it does for them, and gets the book-a-call line from that skill.
@@ -35,6 +37,8 @@ Write down:
 ## 3. Look for it yourself, then show them
 
 Ask once: "With your OK, I'll look through your files, your website and the apps you've already connected for what I need, so I don't have to ask you. I only read. I won't move or change anything."
+
+Tell a beginner what to expect: "Claude may ask you to allow it to read a folder outside this one, and your computer may ask whether Claude can see your Google Drive or OneDrive folder. Say yes to those; I only read."
 
 With a yes, look in:
 - The folders they named. Google Drive, OneDrive and Dropbox usually sync to this computer (on a Mac, look in `~/Library/CloudStorage` first; on Windows, in their user folder), so you can read them like any folder here.
@@ -63,6 +67,6 @@ Whenever they say something like "I've got that in a document" or "I can share t
 
 ## 5. Their goal
 
-The whole folder is built around helping them reach their goal. Fill in `context/goal.md` in their words, with the numbers. For example: "Improve client results, and sign 2 new clients worth £5,000 a month in total, by the end of February 2027."
+The whole folder is built around helping them reach their goal. Fill in `context/goal.md` in their words, with the numbers. For example: "Win 3 new hospitality clients worth £4,500 a month in total, and get my week down to 4 days, by the end of March 2027."
 
 If they're vague, ask one follow-up: "What would tell you it's worked? A number of clients, an amount a month, hours saved?" Change its status line to `Status: filled in on <date>`.

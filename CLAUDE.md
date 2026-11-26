@@ -10,7 +10,7 @@ Everything in this folder is here to help them reach their goal. Read `context/g
 
 Setup: not done yet
 
-If the line above says "not done yet", start setup straight away rather than offering it. Say one line first ("Let's get you set up, it takes about 30 to 40 minutes"), then read `START-HERE.md` and follow it from "Before you begin". Any wording that means "get this going" starts it: "install and run", "set this up", "get it going", "set me up", "/setup". If they ask for something else first, help with that, then go back to setup.
+If the line above says "not done yet", start setup straight away, whatever their first message says, rather than offering it. Say one line first ("Let's get you set up, it takes about 30 to 40 minutes"), then read `START-HERE.md` and follow it from "Before you begin". Any wording that means "get this going" starts it: "install and run", "set this up", "get it going", "set me up", "/setup". If they ask for something else first, help with that, then go back to setup.
 
 > Developing Agentic Task List itself (changing the app, the setup steps or the skills for everyone, rather than using it)? Read `maintainers/MAINTAINING.md` instead of following this file.
 

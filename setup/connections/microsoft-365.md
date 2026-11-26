@@ -9,8 +9,8 @@ What it gives your app: the Inbox (Outlook email), the calendar in This week (Ou
 
 1. Say "Let's connect your email, calendar and Teams." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. Ask which kind of Microsoft account the address is, rather than assuming: "Is that a work account your business or IT team manages, or a personal Outlook.com or Hotmail address?"
-4. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Microsoft 365", then Connect (or Add), then choose **Work or school account** or **Personal account** to match, then sign in and approve.
+3. If `context/tools.md` doesn't already say which kind of Microsoft account the address is, ask, rather than assuming: "Is that a work account your business or IT team manages, or a personal Outlook.com or Hotmail address?"
+4. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Microsoft 365", then Connect (or Add), then choose **Work or school account** or **Personal account** to match, then sign in and approve. It connects one Microsoft account at a time.
 5. If their Claude Owner or a Microsoft administrator has to approve it first, offer to draft a short message the person can send them. Claude never sends this itself. Mark it `waiting` with `waitingOn` set to who it's waiting on (for example "IT"), and go on with the rest of setup (`.claude/skills/connect-a-tool`, "Waiting on someone else").
 
 Microsoft does not publish a standalone Teams transcript connector; transcripts come through this same Microsoft 365 connector.
