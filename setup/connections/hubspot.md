@@ -9,8 +9,8 @@ What it gives your app: contacts in People, and deals going quiet or tickets nee
 
 1. Say "Let's connect your customer records." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then Browse, then "HubSpot", then Connect, then authenticate and choose permissions.
-   If "HubSpot" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "HubSpot" and use exactly `https://mcp.hubspot.com`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then Browse, then "HubSpot", then Connect, then authenticate and choose permissions.
+   If "HubSpot" isn't listed: in Connectors, the + button, then Add custom connector. Name it "HubSpot" and use exactly `https://mcp.hubspot.com`. Then sign in and approve. Use no other address.
 4. HubSpot recommends setting the connector to always ask before updates; choose that option if offered.
 5. If they aren't a Super Admin and don't have App Marketplace Access, offer to draft a short message they can send their Super Admin. Claude never sends this itself.
 

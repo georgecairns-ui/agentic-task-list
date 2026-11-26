@@ -371,8 +371,9 @@
   };
 
   // ---------- Drafts and calendar ----------
+  // A draft can carry its own provider: a reply to an email that came to a second inbox opens there
   function openDraft(draft, after) {
-    const provider = data.settings.emailProvider || "gmail";
+    const provider = (draft && draft.provider) || data.settings.emailProvider || "gmail";
     L.open(L.composeUrl(draft, provider));
     if (after) after();
   }
@@ -667,7 +668,7 @@
         const r = M.replyById(data, id);
         if (r) openDraft(r.draft, function () {
           change(function (d) { mut.markDraftOpened(d, id); });
-          ui.toast("Your draft is open in " + L.emailLabel(data.settings.emailProvider) + ". Check it and press send", { icon: "mail", duration: 7000, actionLabel: "I sent it", onAction: function () { change(function (d) { mut.setReply(d, id, { status: "replied" }); }); } });
+          ui.toast("Your draft is open in " + L.emailLabel((r.draft && r.draft.provider) || data.settings.emailProvider) + (r.draft && r.draft.from ? ". Send it from " + r.draft.from : "") + ". Check it and press send", { icon: "mail", duration: 7000, actionLabel: "I sent it", onAction: function () { change(function (d) { mut.setReply(d, id, { status: "replied" }); }); } });
         });
         break;
       }

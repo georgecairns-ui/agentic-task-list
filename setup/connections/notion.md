@@ -9,8 +9,8 @@ What it gives your app: People and Review filled from notes, pages and project t
 
 1. Say "Let's connect your Notion workspace." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Notion", then Connect, then sign in to Notion and approve.
-   If "Notion" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "Notion" and use exactly `https://mcp.notion.com/mcp`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Notion", then Connect, then sign in to Notion and approve.
+   If "Notion" isn't listed: in Connectors, the + button, then Add custom connector. Name it "Notion" and use exactly `https://mcp.notion.com/mcp`. Then sign in and approve. Use no other address.
 Notion's hosted connector only works through this sign-in ("Notion MCP currently requires you to complete the OAuth authorization flow"); a separate Notion integration token does not work with it.
 
 ## If there's no connector

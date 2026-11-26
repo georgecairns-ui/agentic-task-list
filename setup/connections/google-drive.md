@@ -9,7 +9,7 @@ What it gives your app: People and Review filled from files the business already
 
 1. Say "Let's connect your Google Drive." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Google Drive", then Connect, then sign in with the business Google account and approve.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Google Drive", then Connect, then sign in with the business Google account and approve.
 
 ## If there's no connector
 

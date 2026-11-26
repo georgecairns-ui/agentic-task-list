@@ -4,7 +4,7 @@ Goal: short, accurate notes in `context/` so your suggestions and drafts are spe
 
 ## 5.1 Work it out first
 
-With the connections from steps 2 to 4, quietly gather:
+Start from what you found and they confirmed in `setup/first-questions.md` (section 3), and their goal in `context/goal.md`: don't ask for any of it again. Then, with the connections from steps 2 to 4, quietly gather what's still missing:
 - From their **sent email** (last 2 to 3 weeks): who they deal with most, their clients and suppliers, how they write.
 - From their **calendar**: their working pattern and regular meetings.
 - From **calls**: what they sell and what's in progress.
@@ -27,7 +27,7 @@ If yes, follow `.claude/skills/write-like-me` in learn mode.
 |---|---|
 | `context/business.md` | What the business does, for whom, what it sells, location, website |
 | `context/people.md` | Team and helpers, key clients and suppliers, and how formal to be with each |
-| `context/priorities.md` | Ask one question: "What matters most over the next 3 months?" |
+| `context/priorities.md` | What matters most over the next 3 months, in the light of their goal. Ask only if their goal doesn't already say it |
 | `context/routines.md` | Working pattern, plus anything recurring you spotted (VAT, payroll, monthly invoicing). Ask: "Anything else you do every week or month that I should remind you about?" |
 | `context/voice.md` | From 5.2 |
 

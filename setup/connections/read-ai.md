@@ -9,7 +9,7 @@ What it gives your app: Calls entries and drafted follow-ups from meeting record
 
 1. Say "Let's connect your meeting reports." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then search "Read AI", then Connect to Claude, then sign in and Allow Access.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then search "Read AI", then Connect to Claude, then sign in and Allow Access.
 Read AI says this connector works across Claude Desktop, Claude web and Claude Code once connected.
 
 ## If there's no connector

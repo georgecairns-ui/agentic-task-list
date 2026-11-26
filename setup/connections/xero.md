@@ -9,7 +9,7 @@ What it gives your app: unpaid invoices to chase and bills due in Review, and di
 
 1. Say "Let's connect your accounts." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Xero", then Connect, then sign in with the business Xero login and choose the organisation.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Xero", then Connect, then sign in with the business Xero login and choose the organisation.
 
 ## If there's no connector
 

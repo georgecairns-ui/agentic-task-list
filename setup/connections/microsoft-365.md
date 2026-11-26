@@ -2,21 +2,22 @@
 
 What it gives your app: the Inbox (Outlook email), the calendar in This week (Outlook meetings) and Calls (Teams meeting transcripts turned into actions), feeding Review.
 
-**Connector:** "Microsoft 365" in Claude's connector directory. **Plans:** Free, Pro, Max, Team and Enterprise on the Claude side; needs a work or school Microsoft 365 account on a Microsoft Entra tenant (not outlook.com, hotmail.com or live.com), plus a one-time consent from a Microsoft Entra Global Administrator.
+**Connector:** "Microsoft 365" in Claude's connector directory. **Plans:** on Pro and Max it takes a work or school account or a personal one (Outlook.com, Hotmail, Live or MSN), with no administrator needed for a personal account. On Team and Enterprise it takes only a work or school account: the Claude organisation Owner switches it on, and a Microsoft Entra Global Administrator gives a one-time consent.
 **Route:** directory.
 
 ## Connect
 
 1. Say "Let's connect your email, calendar and Teams." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Microsoft 365", then Connect. They sign in with the work Microsoft account and approve.
-4. If a Global Administrator needs to approve it first, offer to draft a short message the person can send them. Claude never sends this itself.
+3. If `context/tools.md` doesn't already say which kind of Microsoft account the address is, ask, rather than assuming: "Is that a work account your business or IT team manages, or a personal Outlook.com or Hotmail address?"
+4. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Microsoft 365", then Connect (or Add), then choose **Work or school account** or **Personal account** to match, then sign in and approve. It connects one Microsoft account at a time.
+5. If their Claude Owner or a Microsoft administrator has to approve it first, offer to draft a short message the person can send them. Claude never sends this itself. Mark it `waiting` with `waitingOn` set to who it's waiting on (for example "IT"), and go on with the rest of setup (`.claude/skills/connect-a-tool`, "Waiting on someone else").
 
 Microsoft does not publish a standalone Teams transcript connector; transcripts come through this same Microsoft 365 connector.
 
 ## If their email isn't a work account
 
-If the business uses a personal outlook.com, hotmail.com or live.com account, Microsoft 365 is not available for it, and there's no Claude connector for it. Say plainly: "There's no Claude connector for [provider], so I can't connect to your email live." Offer the one alternative: forward work email to a Gmail account and connect that (`setup/connections/gmail-and-google-calendar.md`). Record it as `no-connector`. The rest of setup still works without email.
+A personal Outlook.com, Hotmail, Live or MSN address connects through this same connector on Pro and Max (choose **Personal account**). On Team and Enterprise that option isn't offered, so there's no Claude connector for it: say plainly, "There's no Claude connector for your personal Outlook address on your Claude plan, so I can't connect to it live." Offer the one alternative: forward it into an inbox that is connected. Record it as `no-connector`. The rest of setup still works without it.
 
 ## Prove it
 
@@ -36,7 +37,7 @@ Pre-approve for check-ins, read-only tools only: `outlook_email_search`, `outloo
 
 ## Sources
 
-Verified on 2026-10-06.
+Verified on 2026-10-06. Personal accounts and the Team and Enterprise approvals rechecked on 2026-11-26 (the page now offers personal accounts on Pro and Max).
 - https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
 - https://claude.com/connectors/microsoft-365
 - https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide

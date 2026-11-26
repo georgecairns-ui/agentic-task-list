@@ -11,12 +11,13 @@ The routine that makes the task list feel live. It runs a few times a day, at th
 
 - `apps/task-list/data/tasks.json` and `apps/task-list/CLAUDE.md` (the data format).
 - The connections listed in `context/tools.md`.
+- `context/goal.md`: their goal, so you can say how this run moves them towards it.
 
 ## Steps
 
 1. Read `apps/task-list/data/tasks.json` now. Note `triage.lastRunAt`: everything since then is new.
-2. **Calendar.** If a calendar is connected, copy events from yesterday to 14 days ahead into `events`, replacing the list, and set `eventsSyncedAt`.
-3. **Inbox.** If email is connected, follow `.claude/skills/triage-inbox` for emails since `triage.lastRunAt` (or the last 24 hours if it's empty).
+2. **Calendar.** Copy events from yesterday to 14 days ahead from every connected calendar, merged into one list, into `events`, replacing the list, and set `eventsSyncedAt`.
+3. **Inbox.** For every connected inbox, follow `.claude/skills/triage-inbox` for emails since `triage.lastRunAt` (or the last 24 hours if it's empty).
 4. **Calls.** If a call recorder is connected, follow `.claude/skills/process-calls` for calls since the last run.
 5. **Replies already dealt with.** For each reply still `waiting`, check the thread: if the person has since replied themselves, set its `status` to `replied`.
 6. **Today's plan.** If it's the first check-in of the day and there's no plan for today, follow `.claude/skills/sort-my-day`. Otherwise, add any new suggestion that clearly belongs on today as a `proposed` plan item with a reason; don't rewrite the plan.
@@ -24,9 +25,11 @@ The routine that makes the task list feel live. It runs a few times a day, at th
 8. Update `triage`: `lastRunAt` now, `nextRunAt` (the next agreed check-in time, which is in `context/tools.md`, or null if there is no scheduled check-in), and add this run's counts to `emailsScanned`, `needReply`, `newTasks`, `noAction` and `callsProcessed` if `lastRunAt` was today (start from zero if it was an earlier day).
 9. Save safely: read the file right before writing, write the whole file, read it back and check it parses.
 10. Make sure the app is running, so the person sees the update: `bash setup/scripts/start-app.sh` (Mac or Linux) or `powershell -ExecutionPolicy Bypass -File setup\scripts\start-app.ps1` (Windows). It does nothing if it's already running.
-11. **Connections.** For each app you read from in this check-in, set its `checked` in `apps/home/data/connections.json` to today, and if its status was `needs-attention`, set it back to `connected` (the read just worked). If a read failed, set it to `needs-attention` with what went wrong in `note`, keep the old `checked`, and say so in one line of your summary ("Couldn't read Xero this time: it may need signing in again. There's a Fix it button on Home.").
+11. **Connections.** For each app you read from in this check-in, set its `checked` in `apps/home/data/connections.json` to today, and if its status was `needs-attention`, set it back to `connected` (the read just worked). If a read failed, set it to `needs-attention` with what went wrong in `note`, keep the old `checked`, and say so in one line of your summary ("Couldn't read Xero this time: it may need signing in again. There's a Fix it button on Home."). Leave `waiting` rows alone: they're finished when the person says it's sorted (`.claude/skills/connect-a-tool`, "Waiting on someone else").
 
 ## What to say
+
+Open with one line on progress towards their goal (`context/goal.md`), when this run found something that moves it: "Towards your 2 new clients: Marlow Dental asked for a proposal." Skip that line when nothing moved it, and when `context/goal.md` isn't filled in.
 
 If the person asked: one or two lines. "2 new emails need a reply (both drafted, in your Inbox), 1 new task from your call with Tom, nothing else urgent."
 If this is a scheduled run, say nothing unless something is urgent (an email marked urgent, a call action due today) or a connection read failed; each of those is worth one line.

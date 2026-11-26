@@ -9,8 +9,8 @@ What it gives your app: contacts in People, and deals going quiet in Review.
 
 1. Say "Let's connect your sales pipeline." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Pipedrive", then Connect, then sign in to Pipedrive and approve.
-   If "Pipedrive" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "Pipedrive MCP BETA" and use exactly `https://mcp.pipedrive.ai/mcp`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Pipedrive", then Connect, then sign in to Pipedrive and approve.
+   If "Pipedrive" isn't listed: in Connectors, the + button, then Add custom connector. Name it "Pipedrive MCP BETA" and use exactly `https://mcp.pipedrive.ai/mcp`. Then sign in and approve. Use no other address.
 
 ## If there's no connector
 
