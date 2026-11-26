@@ -9,8 +9,8 @@ What it gives your app: upcoming bookings in Calendar and People, and meetings t
 
 1. Say "Let's connect your bookings." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Calendly" (search for it), then Connect, then sign in to Calendly and approve.
-   If "Calendly" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "Calendly" and use exactly `https://mcp.calendly.com/`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Calendly" (search for it), then Connect, then sign in to Calendly and approve.
+   If "Calendly" isn't listed: in Connectors, the + button, then Add custom connector. Name it "Calendly" and use exactly `https://mcp.calendly.com/`. Then sign in and approve. Use no other address.
 4. Once added, it is switched on per chat (the + button, then Connectors, then Calendly); Claude switches it on for this session itself (the table).
 
 ## If there's no connector

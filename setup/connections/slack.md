@@ -9,7 +9,7 @@ What it gives your app: requests from the team that came in over chat, in Review
 
 1. Say "Let's connect your team chat." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then the + button, then "Slack", then Connect, then sign in to Slack and approve.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then the + button, then "Slack", then Connect, then sign in to Slack and approve.
 4. If a workspace admin needs to approve it first, offer to draft a short message the person can send them. Claude never sends this itself.
 
 ## If there's no connector

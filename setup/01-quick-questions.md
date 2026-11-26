@@ -12,6 +12,8 @@ Goal: in one short exchange, learn what the person uses, so every later step is 
 
 ## 1.2 Ask the questions
 
+First, follow `setup/first-questions.md`: the talking tip, the first questions (their computer, Claude plan, where their files are, every email address and where they check meetings, what they already use, and their goal), then look for what you need yourself and show them what you found. Then ask the questions below, leaving out everything that already answered.
+
 Use the guide mode from `setup/progress.md`: for `beginner`, ask the questions 2 at a time instead of all at once.
 
 Open with what you found in 1.1, so they see you've already looked: "You've already got Gmail and Google Calendar connected to Claude, so I'll use those." Say what you actually found in 1.1, for example "I can see Gmail, but it needs signing in again, so we'll do that first." Then send the questions as a friendly, numbered message (all at once, unless their guide mode says otherwise). Leave out every question you already have the answer to from 1.1, say in one line what you already know, and renumber the rest. Tell them short answers are fine.
@@ -19,27 +21,25 @@ Open with what you found in 1.1, so they see you've already looked: "You've alre
 > To set this up properly I need to know a few things. Short answers are fine.
 >
 > 1. Your first name, your business's name, and in a sentence what it does. And what's your website? (I'll use it to learn about the business and to make your task list look like it.)
-> 2. Which email do you use for work? (Gmail or Google Workspace, Outlook with a work Microsoft account, Outlook.com or Hotmail, or something else.)
-> 3. Which calendar? (Usually the same as your email.)
-> 4. Do you record your calls or meetings? If so, with what? (For example Fathom, Fireflies, Otter, Granola, tl;dv, Read AI, Zoom, Microsoft Teams or Google Meet.)
-> 5. Which other apps do you use for the business? For example accounts (Xero, QuickBooks, FreeAgent), customers and sales (HubSpot, Pipedrive, a spreadsheet), payments (Stripe), files (Google Drive, OneDrive), team chat (Slack, Teams), notes (Notion), bookings (Calendly).
-> 6. Which days and hours do you usually work?
-> 7. Is it just you, or do you hand work to anyone? (First names are enough.)
+> 2. Do you record your calls or meetings? If so, with what? (For example Fathom, Fireflies, Otter, Granola, tl;dv, Read AI, Zoom, Microsoft Teams or Google Meet.)
+> 3. Which other apps do you use for the business? For example accounts (Xero, QuickBooks, FreeAgent), customers and sales (HubSpot, Pipedrive, folk, a spreadsheet), payments (Stripe), files (Google Drive, OneDrive), team chat (Slack, Teams), notes (Notion), bookings (Calendly).
+> 4. Which days and hours do you usually work?
+> 5. Is it just you, or do you hand work to anyone? (First names are enough.)
 
 ## 1.3 Write it down
 
 Put their website in `context/business.md` ("Website:"), so step 5 can use it without asking again.
 
 Fill in `context/tools.md`:
-- "Your setup": computer, Claude version (Claude Code or the Claude app), workspace location, email provider, calendar provider, solo or team.
+- "Your setup": computer, Claude plan, workspace location, where their files live, every email address with its provider (work or personal), calendar provider, solo or team.
 - "Connected apps": one row per app they named, with "How it's connected" left as "to do".
 
-Set `settings.yourName`, `settings.businessName`, `settings.dayStarts` and `settings.dayEnds` in `apps/task-list/data/tasks.json`, and `settings.emailProvider` (`gmail`, `outlook-work`, `outlook-personal` or `other`) and `settings.calendarProvider` (`google`, `outlook-work`, `outlook-personal` or `other`), so the app's Draft and Add to calendar buttons open the right place.
+Set `settings.yourName`, `settings.businessName`, `settings.dayStarts` and `settings.dayEnds` in `apps/task-list/data/tasks.json`, and `settings.emailProvider` (`gmail`, `outlook-work`, `outlook-personal` or `other`) for their main work inbox and `settings.calendarProvider` (`google`, `outlook-work`, `outlook-personal` or `other`), so the app's Draft and Add to calendar buttons open the right place. (A reply to an email that came to another inbox carries that inbox's provider in its draft, so Draft opens there instead.)
 
-Create `apps/home/data/connections.json` if it isn't there, in the format in `setup/connections/README.md` ("Recording a connection"), with one row per app they named (email and calendar from the same provider share one row, keyed by the guide's file name: `gmail-and-google-calendar` or `microsoft-365`; from different providers, they get a row each, keyed as in step 2's 2.6), each `"status": "not-connected"`. Only ever set `connected` after a real read works.
+Create `apps/home/data/connections.json` if it isn't there, in the format in `setup/connections/README.md` ("Recording a connection"), with one row per app they named and one row per inbox (with a single inbox, email and calendar from the same provider share one row, keyed by the guide's file name: `gmail-and-google-calendar` or `microsoft-365`; from different providers, or with more than one inbox, they get a row each, keyed as in step 2's 2.6), each `"status": "not-connected"`. Only ever set `connected` after a real read works.
 
 Tick step 1 in `setup/progress.md`.
 
 ## What to say
 
-> Thanks Sam. Gmail and Google Calendar, Fathom for calls, Xero for accounts, and it's you plus Priya. I'll connect those in that order. Most of them are a couple of clicks: you sign in, I do the rest.
+> Thanks Sam. Your work email in Outlook and your meetings in Gmail, Fathom for calls, Xero for accounts, and it's you plus Priya. I'll connect those in that order. Most of them are a couple of clicks: you sign in, I do the rest.

@@ -151,7 +151,7 @@ Older files have a `week` section with goals. The app no longer shows weekly goa
 
 ### Replies: emails that need an answer (the Inbox page)
 
-From `triage-inbox`. The app's Inbox page lists those `waiting`, urgent first, each with a **Draft** button that opens the draft, written and addressed, in Gmail, Outlook or their email app (from `settings.emailProvider`). The person checks it and sends it.
+From `triage-inbox`. The app's Inbox page lists those `waiting`, urgent first, each with a **Draft** button that opens the draft, written and addressed, in Gmail, Outlook or their email app (from the draft's `provider`, or `settings.emailProvider`). The person checks it and sends it.
 
 ```json
 { "id": "r-k3j9x2", "from": { "name": "Dev Patel", "email": "dev@hollins.example" }, "subject": "Can we move today's kick-off to 2:30?",
@@ -161,6 +161,7 @@ From `triage-inbox`. The app's Inbox page lists those `waiting`, urgent first, e
   "draft": { "to": "dev@hollins.example", "cc": "", "subject": "Re: Can we move today's kick-off to 2:30?", "body": "Hi Dev,\n\n2:30 works fine..." } }
 ```
 
+- With more than one inbox, the draft replies from the address the email came to: add `"from": "<that address>"` and, when that inbox's provider isn't `settings.emailProvider`, `"provider"` (`gmail`, `outlook-work`, `outlook-personal` or `other`), so Draft opens in the right place.
 - `urgency` is `high`, `normal` or `low`. `status` is `waiting`, `replied` (the person marked it, or you saw their reply in the thread) or `dismissed` (no reply needed).
 - The person can edit the draft in the app; keep their edits (`draftEditedAt` is set). Don't overwrite a draft they've edited.
 - Never re-add a reply for a message `ref` that's already here, whatever its status.

@@ -14,7 +14,7 @@ description: Notices new facts that come up in conversation, such as a new clien
 
 ## What you need
 
-- The relevant file under `context/`: `business.md`, `people.md`, `voice.md`, `priorities.md` or `routines.md`.
+- The relevant file under `context/`: `goal.md`, `business.md`, `people.md`, `voice.md`, `priorities.md` or `routines.md`.
 
 ## Steps
 
@@ -23,7 +23,8 @@ description: Notices new facts that come up in conversation, such as a new clien
    - A client, supplier or team member: `people.md`.
    - What the business does, its offer, its customers: `business.md`.
    - How the person likes things written or said: `voice.md`.
-   - A goal or what matters this quarter: `priorities.md`.
+   - Their main goal, or progress towards it, or a goal met or changed: `goal.md`. When it's met or changed, ask what the next one is.
+   - What matters this quarter: `priorities.md`.
    - A recurring job like invoicing, VAT or payroll: `routines.md`.
 3. Propose the one line you'd add or change, in the person's own words where you can.
 4. Wait for a yes before editing anything.

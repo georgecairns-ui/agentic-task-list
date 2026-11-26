@@ -9,8 +9,8 @@ What it gives your app: Calls entries and drafted follow-ups from call notes, wi
 
 1. Say "Let's connect your call notes." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Granola", then Connect, then sign in to Granola in the browser window that opens and approve.
-   If "Granola" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "Granola" and use exactly `https://mcp.granola.ai/mcp`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Granola", then Connect, then sign in to Granola in the browser window that opens and approve.
+   If "Granola" isn't listed: in Connectors, the + button, then Add custom connector. Name it "Granola" and use exactly `https://mcp.granola.ai/mcp`. Then sign in and approve. Use no other address.
 
 ## If there's no connector
 

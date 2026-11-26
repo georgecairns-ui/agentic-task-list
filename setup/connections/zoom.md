@@ -9,7 +9,7 @@ What it gives your app: Calls entries and drafted follow-ups from Zoom cloud rec
 
 1. Say "Let's connect your Zoom recordings." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Zoom for Claude", then Connect, then sign in to Zoom and approve.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Zoom for Claude", then Connect, then sign in to Zoom and approve.
 4. If the person is not a Zoom admin, they may need an admin to turn on the connector first; offer to draft a short message they can send that admin. Claude never sends this itself.
 
 Zoom doesn't publish a web address for this connector, so there is no custom-address option: it has to be added from Claude's directory.

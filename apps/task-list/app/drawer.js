@@ -172,7 +172,7 @@
       '<label class="draft__field"><span>Subject</span><input class="input input--bare" data-rfield="subject" value="' + esc(dr.subject || "") + '"></label>' +
       "</div>" +
       '<textarea class="textarea draft__body" data-rfield="body" rows="10" aria-label="Draft reply">' + esc(dr.body || "") + "</textarea>" +
-      '<div class="draft__actions"><button type="button" class="btn btn--primary" data-action="reply-draft">' + icon("pencil") + "Draft in " + esc(L.emailLabel(d.settings.emailProvider)) + "</button>" +
+      '<div class="draft__actions"><button type="button" class="btn btn--primary" data-action="reply-draft">' + icon("pencil") + "Draft in " + esc(L.emailLabel(dr.provider || d.settings.emailProvider)) + "</button>" +
       '<button type="button" class="btn" data-action="copy-draft">' + icon("list") + "Copy</button></div>" +
       '<p class="muted drawer__small">Opens a new email with this reply in it. Check it and press send yourself. Changes you make here are kept.</p></section>' +
       "</div>" +

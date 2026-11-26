@@ -9,7 +9,7 @@ What it gives your app: the Inbox (draft emails waiting for a reply), the calend
 
 1. Say "Let's connect your email and calendar." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Gmail", then Connect. They sign in with the business Google account and approve. Then the same for "Google Calendar".
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Gmail", then Connect. They sign in with the business Google account and approve. Then the same for "Google Calendar".
 
 ## Prove it
 

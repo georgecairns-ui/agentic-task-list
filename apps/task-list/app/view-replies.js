@@ -56,7 +56,7 @@
       (r.why ? '<span class="reply__why">' + esc(r.why) + "</span>" : "") +
       "</button>" +
       '<span class="reply__actions">' + (done ? '<span class="chip chip--success">' + icon("check") + (r.status === "replied" ? "Replied" : "Not needed") + '</span><button type="button" class="btn btn--ghost btn--sm" data-action="reply-reopen">Undo</button>' :
-        '<button type="button" class="btn btn--primary btn--sm" data-action="reply-draft" title="Opens the drafted reply in ' + esc(L.emailLabel(d.settings.emailProvider)) + '">' + icon("pencil") + "Draft</button>" +
+        '<button type="button" class="btn btn--primary btn--sm" data-action="reply-draft" title="Opens the drafted reply in ' + esc(L.emailLabel((r.draft && r.draft.provider) || d.settings.emailProvider)) + '">' + icon("pencil") + "Draft</button>" +
         '<button type="button" class="icon-btn icon-btn--sm is-approve" data-action="reply-done" aria-label="Mark as replied">' + icon("check") + "</button>" +
         '<button type="button" class="icon-btn icon-btn--sm is-skip" data-action="reply-dismiss" aria-label="No reply needed">' + icon("x") + "</button>") +
       "</span></li>";

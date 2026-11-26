@@ -10,7 +10,7 @@ What it gives your app: unpaid invoices and estimates in Review.
 1. If they're not a US QuickBooks customer, there's no Claude connector for them: go to "If there's no connector".
 2. Say "Let's connect your accounts." Say "connect" and "a connection", never MCP, API, JSON or repo.
 3. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-4. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Intuit QuickBooks", then Connect, then sign in with Intuit and approve.
+4. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Intuit QuickBooks", then Connect, then sign in with Intuit and approve.
 5. Use only the connector named "Intuit QuickBooks". Claude's directory also lists other QuickBooks connectors from third parties (searched 2026-10-29); they can create and change records, so don't use them.
 
 ## If there's no connector

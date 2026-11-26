@@ -6,6 +6,7 @@ They're plain text. You can open and edit any of them yourself. If something's w
 
 | File | What's in it |
 |---|---|
+| `goal.md` | What you want to achieve, with the numbers. Everything else is judged by it |
 | `business.md` | What the business does, for whom, and what it sells |
 | `people.md` | Your team, helpers, key clients and suppliers |
 | `priorities.md` | What matters most right now |

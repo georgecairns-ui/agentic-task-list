@@ -7,7 +7,7 @@ description: Sorts the person's email like a good assistant would. Every new ema
 
 ## What you need
 
-- A connected email account (see `context/tools.md`). If there isn't one, say so and point to `setup/02-connect-email-and-calendar.md`.
+- Every connected inbox (see `context/tools.md` and `apps/home/data/connections.json`). Read them all, as one inbox, not just the first. If none is connected, say so and point to `setup/02-connect-email-and-calendar.md`.
 - `apps/task-list/data/tasks.json` and `apps/task-list/CLAUDE.md` (the `replies` and task formats).
 - `context/voice.md` and `context/people.md` for drafting.
 
@@ -32,7 +32,7 @@ An email can be both "needs a reply" and "a task" (Tom sends a signed contract: 
    - `why`: one line on what they need from the person ("Wants to move today's call to 2:30. You're free then.").
    - `summary`: 1 or 2 sentences in your own words. Never paste the whole email.
    - `urgency`: `high` if there's a deadline today or tomorrow, money is at stake, or it's from a key client and time-sensitive; `low` if it's a courtesy reply; otherwise `normal`.
-   - `draft` `{ to, cc, subject, body }`: a reply that answers the actual question, in the person's voice (`context/voice.md`), following `.claude/skills/human-email`. Subject is "Re: " plus the original. If a fact only the person knows is missing (a price, a yes or no), leave a clear gap in square brackets, for example "[add the figure here]", rather than guessing.
+   - `draft` `{ to, cc, subject, body }`, plus `from` (the address the email came to) when there is more than one inbox, and `provider` when that inbox isn't their main one (see `apps/task-list/CLAUDE.md`): a reply that answers the actual question, in the person's voice (`context/voice.md`), following `.claude/skills/human-email`. Subject is "Re: " plus the original. If a fact only the person knows is missing (a price, a yes or no), leave a clear gap in square brackets, for example "[add the figure here]", rather than guessing.
    - `status: "waiting"`.
 5. For **a task**, add a suggested task as described in `apps/task-list/CLAUDE.md`, with `source` `{ type: "email", from, subject, date, ref }`, a clear title, any amount or date in `notes` and `due`, and `personId`. At most 5 new tasks per run.
 6. Count the piles into `triage` (see `.claude/skills/check-in` step 7).

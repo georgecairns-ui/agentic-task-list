@@ -9,7 +9,7 @@ What it gives your app: Calls entries and drafted follow-ups from call recording
 
 1. Say "Let's connect your call recordings." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "Fireflies", then Connect, then sign in with Google or Microsoft (recommended) and approve.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "Fireflies", then Connect, then sign in with Google or Microsoft (recommended) and approve.
 
 ## If there's no connector
 

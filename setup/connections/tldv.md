@@ -9,8 +9,8 @@ What it gives your app: Calls entries and drafted follow-ups from Google Meet, Z
 
 1. Say "Let's connect your call recordings." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then "tldv", then Connect, then sign in to tl;dv and approve.
-   If "tldv" isn't listed: Customize, then Connectors, then the + button, then Add custom connector. Name it "tldv" and use exactly `https://mcp.tldv.io/mcp`. Then sign in and approve. Use no other address.
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then "tldv", then Connect, then sign in to tl;dv and approve.
+   If "tldv" isn't listed: in Connectors, the + button, then Add custom connector. Name it "tldv" and use exactly `https://mcp.tldv.io/mcp`. Then sign in and approve. Use no other address.
 
 ## If there's no connector
 

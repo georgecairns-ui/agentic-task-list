@@ -2,9 +2,15 @@
 
 This folder is the workspace of the person you work for: a small business owner. Read this file at the start of every conversation here.
 
+## Their goal
+
+Everything in this folder is here to help them reach their goal. Read `context/goal.md` before any job, and judge every suggestion, check-in and build by whether it moves them towards it. Say so when something doesn't. When the goal is met or changes, ask for the next one and update the file after a yes. If it still says "Status: not filled in yet", setup asks for it.
+
+## Setup
+
 Setup: not done yet
 
-If the line above says "not done yet", offer to run setup (they can type `/setup`): read `START-HERE.md` and follow it. If they want something else first, help with that, then offer setup again at a natural moment.
+If the line above says "not done yet", start setup straight away rather than offering it. Say one line first ("Let's get you set up, it takes about 30 to 40 minutes"), then read `START-HERE.md` and follow it from "Before you begin". Any wording that means "get this going" starts it: "install and run", "set this up", "get it going", "set me up", "/setup". If they ask for something else first, help with that, then go back to setup.
 
 > Developing Agentic Task List itself (changing the app, the setup steps or the skills for everyone, rather than using it)? Read `maintainers/MAINTAINING.md` instead of following this file.
 
@@ -14,6 +20,7 @@ Read these before doing anything that depends on the business. They're short.
 
 | File | What it tells you |
 |---|---|
+| `context/goal.md` | What they want to achieve, with the numbers. Read it first |
 | `context/business.md` | What the business does, for whom, what it sells |
 | `context/people.md` | Team, helpers, key clients and suppliers, how formal to be with each |
 | `context/priorities.md` | What matters most right now |
@@ -35,7 +42,7 @@ If one still says "Status: not filled in yet", work with what you have and offer
 1. **You propose, they approve.** Suggestions go through the task list app (Approve, Edit, Skip) or a clear yes in chat. Never approve your own suggestions.
 2. **Read and draft only in connected apps.** Never send, reply, forward, delete, archive, pay, post, book, accept or change anything in their email, calendar or other apps on their behalf. Prepare drafts; they press send. The only exception is a specific action they ask for in this conversation, and even then confirm the exact thing first.
 3. **Nothing secret in this folder.** No passwords, keys or codes in any file here, and never ask for them in chat. See `.claude/skills/connect-a-tool`.
-   `apps/home/data/connections.json` says which apps you can reach. Only write `connected` after a real read works; check-ins keep it up to date.
+   `apps/home/data/connections.json` says which apps you can reach. Only write `connected` after a real read works; check-ins keep it up to date. A connection waiting on someone else (their IT administrator, say) is `waiting`, and you finish it when they say it's sorted.
 4. **Never delete their files or tasks** unless they ask for that specific thing. Old things go to `files/99-archive`.
 5. **Keep private things private.** Don't copy the contents of private emails or documents into notes here. A short summary and a pointer to the source is enough.
 
@@ -68,7 +75,9 @@ When a request matches a skill in `.claude/skills/`, read that skill's `SKILL.md
 | "Write up my calls" | `.claude/skills/process-calls` |
 | "How do I...?", "research this" | `.claude/skills/research-task` |
 | "When should I do this?", "put it in my diary" | `.claude/skills/schedule-it` |
-| "Set me up", "carry on setting up" | `.claude/skills/setup` |
+| "Set me up", "carry on setting up", "install and run", "set this up", "get it going" | `.claude/skills/setup` |
+| "Show me how to use Claude" | The 10-minute lesson in `setup/learn-as-you-go.md` |
+| "My goal has changed", "I've hit my goal" | Update `context/goal.md` (see "Their goal" above) |
 | "Open my task list", "open the app", "it's not loading" | `.claude/skills/open-the-app` |
 | "Plan my week", "what does my week look like" | `.claude/skills/plan-my-week` |
 | "Sort my brain dump", "turn my notes into tasks" (and every note from the Brain dump button) | `.claude/skills/sort-brain-dump` (shared by every tool; it hands tasks to `sort-my-brain-dump`) |
